@@ -1,0 +1,15 @@
+// _global.scss
+// Styles that affect multiple pages
+
+.hmpps-header {
+    margin-bottom: 30px;
+}
+
+body.launchpad > .govuk-width-container  {
+  max-width: none;
+  margin: 0;
+}
+
+.govuk-main-wrapper {
+  padding-bottom: 0;
+}

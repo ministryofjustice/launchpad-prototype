@@ -1,0 +1,33 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+//
+
+// Add extra styles here
+
+$govuk-global-styles: true;
+$path: "/assets/images/";
+
+$moj-page-width: 1200px;
+$govuk-page-width: $moj-page-width;
+
+@import "content-hub";
+
+@import './launchpad/components/header-bar';
+@import './launchpad/components/events-summary';
+@import './launchpad/components/tiles-panel';
+@import './launchpad/components/link-tile';
+@import './launchpad/components/internal-link-tile';
+@import "./launchpad/local";
+@import './launchpad/pages/homepage';
+
+@import "global";
+@import "profile";
+@import "timetable";
+
+
+@import "profile.scss";
+@import "timetable.scss";
+
+// Experimental styles
+@import "sandbox.scss";

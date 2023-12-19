@@ -1,0 +1,52 @@
+.link-tile {
+    border: solid 1px #D9DADB;
+
+    &:hover,
+    &:focus-within {
+        border: solid 1px govuk-colour("mid-grey")
+    }
+    
+    a {
+        text-decoration: none;
+        background-color:  govuk-colour("white");
+        box-shadow: 0 -5px 0 0 #D9DADB inset;
+        
+        &:hover {
+            box-shadow: 0 -5px 0 0 govuk-colour("mid-grey")  inset;
+        }
+
+        &:hover h3 {
+            color: govuk-colour("dark-blue");
+        }
+
+        &:focus {
+            background-color: govuk-colour("yellow");
+            box-shadow: 0 -5px 0 0 govuk-colour("mid-grey")  inset;
+        }
+
+        &:focus h3 {
+            color: govuk-colour("black");
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            color: govuk-colour("blue");
+        }
+    }
+
+    @media(max-width: 60.625em) {
+        flex: 0 0 48.8%;
+    }
+
+    @media(min-width: 60.626em) {
+        flex: 0 0 24%;
+    }
+}

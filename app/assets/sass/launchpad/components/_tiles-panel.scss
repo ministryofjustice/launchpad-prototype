@@ -1,0 +1,16 @@
+.tiles-panel {
+  padding: govuk-spacing(8) 0;
+  
+  h2 {
+    color: govuk-colour("white");
+    margin-top: 0;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: .75%;
+    row-gap: .5em;
+  }
+}

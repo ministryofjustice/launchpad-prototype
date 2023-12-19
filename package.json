@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "dev": "govuk-prototype-kit dev",
+    "serve": "govuk-prototype-kit serve",
+    "start": "govuk-prototype-kit start"
+  },
+  "dependencies": {
+    "@govuk-prototype-kit/common-templates": "1.2.2",
+    "@x-govuk/govuk-prototype-filters": "^1.2.1",
+    "govuk-frontend": "4.7.0",
+    "govuk-prototype-kit": "13.13.3",
+    "jquery": "3.7.1",
+    "moment": "^2.29.4"
+  }
+}

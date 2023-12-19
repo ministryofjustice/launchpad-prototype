@@ -1,0 +1,39 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+//
+
+// Add extra styles here
+
+@media (max-width: 60.625em) {
+
+#damage-obligations {
+  thead {
+    display: none;
+  }
+  td {
+    display: flex;
+  }
+
+  tr {
+
+    td {
+      padding: 10px;
+      &:first-child {
+        background-color: #f3f2f1;
+      }
+      &:last-child {
+        padding-bottom: 40px;
+      }
+      &::before {
+        content: attr(data-damage);
+        font-weight: bold;
+        width: 45%;
+        min-width: 45%;
+      }
+
+    }
+
+  }
+}
+}
