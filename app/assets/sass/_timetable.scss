@@ -48,7 +48,7 @@ div.sticky {
   .timetable-header {
     display: block;
     .timetable-nav {
-      display: block;
+      justify-content: flex-start;
       text-align: left;;
       * {margin-left: 0; margin-right: 25px;}
     }
