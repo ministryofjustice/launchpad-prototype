@@ -30,4 +30,6 @@ $govuk-page-width: $moj-page-width;
 @import "timetable.scss";
 
 // Experimental styles
+@import "accellerator.scss";
+@import "dps.scss";
 @import "sandbox.scss";

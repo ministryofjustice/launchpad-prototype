@@ -1,0 +1,139 @@
+{% extends "layouts/launchpad.html" %}
+
+{% set pageName="Book a healthcare appointment" %}
+{% set version="v1" %}
+{% set bodyClasses = 'lp-transormation' %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+
+      <nav aria-label="breadcrumb">
+        <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="../../">Home</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="../">Requests</a>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <span class="govuk-caption-xl">Your request</span>
+      <h1 class="govuk-heading-xl">
+        {{pageName}}
+      </h1>
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row govuk-width-container govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-0">
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--green">
+              Approved
+            </strong>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Health care needed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Physiotherapy
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What part of your body is injured?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Back
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What is the problem?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">Can't walk or stand, shooting pain down leg</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When did it start?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">This week</p>
+          </dd>
+        </div>
+      </dl>
+
+      </div>
+
+      <div class="govuk-grid-column-full govuk-!-padding-0">
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Messages and replies</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Message</th>
+            <th scope="col" class="govuk-table__header">From</th>
+            <th scope="col" class="govuk-table__header">When</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">I have booked you an appointment on 20th March but in the meantime have a look at this video on the Content Hub. The show some stretches that might help.</td>
+            <td class="govuk-table__cell">Healthcare team</td>
+            <td class="govuk-table__cell">2nd March 2024 at 14:40</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">The clinic on 20th march has been cancelled, and an appointment rescheduled for 27th March</td>
+            <td class="govuk-table__cell">Healthcare team</td>
+            <td class="govuk-table__cell">12th March 2024 at 12:05</td>
+          </tr>
+        </tbody>
+      </table>
+
+      </div>
+
+      <div class="govuk-grid-column-one-half govuk-!-padding-0">
+
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="more-detail">
+            Send a message
+          </label>
+        </h1>
+        <div id="more-detail-hint" class="govuk-hint">
+
+        </div>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </div>
+
+
+    </div>
+
+
+  </div> <!-- end main content  -->
+
+
+
+{% endblock %}

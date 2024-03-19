@@ -1,0 +1,125 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Requests" %}
+{% set version="v1" %}
+{% set bodyClasses = 'lp-transormation' %}
+
+
+{% block content %}
+
+	<div class="govuk-width-container">
+
+		<nav aria-label="breadcrumb">
+			<div class="govuk-breadcrumbs">
+				<ol class="govuk-breadcrumbs__list">
+					<li class="govuk-breadcrumbs__list-item">
+						<a class="govuk-breadcrumbs__link" href="./">Home</a>
+					</li>
+				</ol>
+			</div>
+		</nav>
+
+		<h1 class="govuk-heading-xl">
+			{{pageName}}
+		</h1>
+	</div>
+
+
+<div class="dps-homepage-content">
+	<div class="govuk-width-container">
+
+		<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+		<table class="govuk-table">
+		  <caption class="govuk-table__caption govuk-table__caption--m">Requests by department</caption>
+		  <thead class="govuk-table__head">
+		    <tr class="govuk-table__row">
+		      <td scope="col" class="govuk-table__header">Department</td>
+					<td scope="col" class="govuk-table__header">Open requests</td>
+					<td scope="col" class="govuk-table__header">New requests</td>
+					<td scope="col" class="govuk-table__header">New responses</td>
+					<td scope="col" class="govuk-table__header"></td>
+		    </tr>
+		  </thead>
+		  <tbody class="govuk-table__body">
+		    <tr class="govuk-table__row">
+		      <td scope="row" class="govuk-table__cell">Allocations</td>
+					<td class="govuk-table__cell">10</td>
+					<td class="govuk-table__cell">5</td>
+					<td class="govuk-table__cell">2</td>
+					<td class="govuk-table__cell"><a href="">View</a></td>
+		    </tr>
+		    <tr class="govuk-table__row">
+		      <td scope="row" class="govuk-table__cell">Business Hub</td>
+					<td class="govuk-table__cell">10</td>
+					<td class="govuk-table__cell">5</td>
+					<td class="govuk-table__cell">2</td>
+					<td class="govuk-table__cell"><a href="">View</a></td>
+		    </tr>
+		    <tr class="govuk-table__row">
+		      <td scope="row" class="govuk-table__cell">Complaints</td>
+					<td class="govuk-table__cell">10</td>
+					<td class="govuk-table__cell">5</td>
+					<td class="govuk-table__cell">2</td>
+					<td class="govuk-table__cell"><a href="">View</a></td>
+		    </tr>
+				<tr class="govuk-table__row">
+		      <td scope="row" class="govuk-table__cell">Healthcare</td>
+					<td class="govuk-table__cell">10</td>
+					<td class="govuk-table__cell">5</td>
+					<td class="govuk-table__cell">2</td>
+					<td class="govuk-table__cell"><a href="">View</a></td>
+		    </tr>
+				<tr class="govuk-table__row">
+		      <td scope="row" class="govuk-table__cell">Library</td>
+					<td class="govuk-table__cell">10</td>
+					<td class="govuk-table__cell">5</td>
+					<td class="govuk-table__cell">2</td>
+					<td class="govuk-table__cell"><a href="">View</a></td>
+		    </tr>
+				<tr class="govuk-table__row">
+		      <td scope="row" class="govuk-table__cell">OMU</td>
+					<td class="govuk-table__cell">10</td>
+					<td class="govuk-table__cell">5</td>
+					<td class="govuk-table__cell">2</td>
+					<td class="govuk-table__cell"><a href="">View</a></td>
+		    </tr>
+				<tr class="govuk-table__row">
+		      <td scope="row" class="govuk-table__cell">Reception</td>
+					<td class="govuk-table__cell">10</td>
+					<td class="govuk-table__cell">5</td>
+					<td class="govuk-table__cell">2</td>
+					<td class="govuk-table__cell"><a href="./reception">View</a></td>
+		    </tr>
+				<tr class="govuk-table__row">
+		      <td scope="row" class="govuk-table__cell">Residential</td>
+					<td class="govuk-table__cell">10</td>
+					<td class="govuk-table__cell">5</td>
+					<td class="govuk-table__cell">2</td>
+					<td class="govuk-table__cell"><a href="">View</a></td>
+		    </tr>
+				<tr class="govuk-table__row">
+		      <td scope="row" class="govuk-table__cell">Staff</td>
+					<td class="govuk-table__cell">10</td>
+					<td class="govuk-table__cell">5</td>
+					<td class="govuk-table__cell">2</td>
+					<td class="govuk-table__cell"><a href="">View</a></td>
+		    </tr>
+				<tr class="govuk-table__row">
+		      <td scope="row" class="govuk-table__cell">Visits</td>
+					<td class="govuk-table__cell">10</td>
+					<td class="govuk-table__cell">5</td>
+					<td class="govuk-table__cell">2</td>
+					<td class="govuk-table__cell"><a href="">View</a></td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+</div>
+
+	</div>
+</div>
+
+
+{% endblock %}

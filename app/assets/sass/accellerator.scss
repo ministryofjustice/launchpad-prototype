@@ -1,0 +1,32 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+//
+
+// Add extra styles here
+
+.lp-side-navigation {
+  padding-top: 0;
+  li.moj-side-navigation__item {
+    border-bottom: 1px solid #b1b4b6;
+  }
+}
+
+
+#request-notifications {
+  border: 1px solid #b1b4b6;
+  padding: 1em;
+}
+
+.panel-header {
+  display: flex;
+   justify-content: space-between;
+}
+
+.panel-content {
+  display: flex;
+  .filters-column {
+    padding-right: 25px;
+    flex-basis: 35%;
+  }
+}

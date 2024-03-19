@@ -1,0 +1,137 @@
+{% extends "layouts/launchpad.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'lp-transormation' %}
+
+
+{% block content %}
+
+  <section class="govuk-grid-row govuk-width-container">
+    <time class="govuk-heading-l today-date">{{ 0 | getDate }}</time>
+  </section>
+
+  <section class="govuk-grid-row govuk-width-container" id="top-row-wrapper">
+    <div id="events-summary-wrapper">
+      <div class="events-summary govuk-!-padding-4">
+
+        <h2 class="govuk-heading-m">Today's events</h2>
+
+        <div class="govuk-!-padding-bottom-2">
+              <div class="event-details govuk-!-margin-bottom-2 govuk-body">
+                <div class="time">8.30am to 11.45am</div>
+                <div class="description"><strong>RES B C1 Com Worker</strong> Landing C1</div>
+              </div>
+              <div class="event-details govuk-!-margin-bottom-2 govuk-body">
+                <div class="time">1.45pm to 4.45pm</div>
+                <div class="description"><strong>RES B C1 Com Worker</strong> Landing C1</div>
+              </div>
+              <div class="event-details govuk-!-margin-bottom-2 govuk-body">
+                <div class="time">6.30pm to 7.35pm  </div>
+                <div class="description"><strong>Gym</strong></div>
+              </div>
+        </div>
+        <a href="./profile/timetable/" class="govuk-body govuk-link" id="view-timetable-link">View my timetable</a>
+      </div>
+    </div>
+
+    <div class="internal-link-tile" id="internal-link-tile-profile">
+      <a href="./profile/">
+        <h2 class="govuk-heading-l govuk-!-margin-top-0">Profile</h2>
+        <p class="govuk-body-l">Check money, visits, IEP, adjudications and timetable</p>
+      </a>
+    </div>
+  </section>
+
+
+  <section class="govuk-grid-row govuk-width-container" id="top-row-wrapper">
+
+
+  <div class="govuk-grid-column-one-quarter govuk-!-padding-left-0">
+
+    <nav class="moj-side-navigation lp-side-navigation" aria-label="Side navigation">
+      <ul class="moj-side-navigation__list govuk-body">
+        <li class="moj-side-navigation__item">
+          <a href="./requests/">Requests</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#2">Visits</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#3">Money</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#3">Contact</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#3">Healthcare</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#3">Shopping</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#3">Meals</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="#3">Activities</a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="govuk-grid-column-three-quarters govuk-!-padding-right-0">
+
+    <div id="request-notifications">
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Your requests</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--green">
+                New
+              </strong>
+            </td>
+            <td class="govuk-table__cell">Today</td>
+            <td class="govuk-table__cell">Sue John has been added to your PIN phone contacts</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--green">
+                New
+              </strong>
+            </td>
+            <td class="govuk-table__cell">Today</td>
+            <td class="govuk-table__cell">You have a reply about your activity request</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--green">
+                New
+              </strong>
+            </td>
+            <td class="govuk-table__cell">Today</td>
+            <td class="govuk-table__cell">Your request for a doctors appointment has been approved</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="./requests/" class="govuk-body">View all requests</a>
+
+    </div>
+
+</section>
+
+
+
+
+{% endblock %}

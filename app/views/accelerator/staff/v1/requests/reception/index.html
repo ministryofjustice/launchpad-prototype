@@ -1,0 +1,72 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Reception" %}
+{% set version="v1" %}
+{% set bodyClasses = 'lp-transormation' %}
+
+
+{% block content %}
+
+	<div class="govuk-width-container">
+
+		<nav aria-label="breadcrumb">
+			<div class="govuk-breadcrumbs">
+				<ol class="govuk-breadcrumbs__list">
+					<li class="govuk-breadcrumbs__list-item">
+						<a class="govuk-breadcrumbs__link" href="./">Home</a>
+					</li>
+				</ol>
+			</div>
+		</nav>
+
+		<span class="govuk-caption-xl">Requests</span>
+		<h1 class="govuk-heading-xl">
+			{{pageName}}
+		</h1>
+	</div>
+
+
+<div class="dps-homepage-content">
+	<div class="govuk-width-container">
+
+		<div class="govuk-tabs" data-module="govuk-tabs">
+			<div class="wrapper">
+		  <h2 class="govuk-tabs__title">
+		    Contents
+		  </h2>
+		  <ul class="govuk-tabs__list">
+		    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+		      <a class="govuk-tabs__tab" href="#open">
+		        Open
+		      </a>
+		    </li>
+		    <li class="govuk-tabs__list-item">
+		      <a class="govuk-tabs__tab" href="#approved">
+		        Approved
+		      </a>
+		    </li>
+		    <li class="govuk-tabs__list-item">
+		      <a class="govuk-tabs__tab" href="#rejected">
+		        Rejected
+		      </a>
+		    </li>
+		  </ul>
+
+			</div>
+
+
+			<div class="govuk-tabs__panel" id="open">
+        {% include "./includes/open.html" %}
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="approved">
+        {% include "./includes/approved.html" %}
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="rejected">
+        {% include "./includes/rejected.html" %}
+      </div>
+
+	</div>
+</div>
+
+
+{% endblock %}
