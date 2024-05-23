@@ -1,3 +1,5 @@
+
+
 <table class="govuk-table">
 
 
@@ -7,69 +9,13 @@
       <th scope="col" class="govuk-table__header">Request</th>
       <th scope="col" class="govuk-table__header">Department</th>
       <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Response due</th>
       <th scope="col" class="govuk-table__header"></th>
     </tr>
   </thead>
 
   <tbody class="govuk-table__body">
-
-
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">13 March 2024</td>
-      <td class="govuk-table__cell">Attend a religious service</td>
-      <td class="govuk-table__cell">Chaplain</td>
-      <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--grey">
-          Sent
-        </strong>
-      </td>
-      <td class="govuk-table__cell"><a href="./view/request-1">View</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">10 November 2023</td>
-      <td class="govuk-table__cell">Join the gym</td>
-      <td class="govuk-table__cell">Activities</td>
-      <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--grey">
-          Sent
-        </strong>
-      </td>
-      <td class="govuk-table__cell"><a href="">View</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">10 November 2023</td>
-      <td class="govuk-table__cell">Join the job waiting list</td>
-      <td class="govuk-table__cell">Activities</td>
-      <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--yellow">
-          Seen
-        </strong>
-      </td>
-      <td class="govuk-table__cell"><a href="">View</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">10 November 2023</td>
-      <td class="govuk-table__cell">Add to my approved PIN contacts</td>
-      <td class="govuk-table__cell">OMU</td>
-      <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--yellow">
-          Seen
-        </strong>
-      </td>
-      <td class="govuk-table__cell"><a href="">View</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">10 November 2023</td>
-      <td class="govuk-table__cell">Book a healthcare appointment</td>
-      <td class="govuk-table__cell">Healthcare</td>
-      <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--yellow">
-          Seen
-        </strong>
-      </td>
-      <td class="govuk-table__cell"><a href="">View</a></td>
-    </tr>
-
+      {% include "./table-row.html" %}
   </tbody>
 </table>
 

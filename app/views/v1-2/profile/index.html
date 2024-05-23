@@ -1,0 +1,277 @@
+{% extends "layouts/launchpad.html" %}
+
+{% set pageName="John's Profile" %}
+
+{% set bodyClasses = 'profile' %}
+
+{% block content %}
+
+<div class="govuk-grid-row" id="main-content">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-width-container">
+      <nav aria-label="breadcrumb">
+        <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="../">Home</a>
+            </li>
+          </ol>
+        </div>
+      </nav>
+      <h1 class="govuk-heading-xl">
+        {{pageName}}
+      </h1>
+    </div>
+
+
+
+  <div class="govuk-body">
+
+    <div class="card-background">
+      <div class="govuk-width-container" data-test="timetable-container">
+        <h2 class="govuk-heading-m">Today's timetable</h2>
+
+        <ul class="govuk-grid-row card-group">
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card__content" data-test="morningEvents">
+              <h3 class="govuk-heading-m card__heading">
+                Morning
+              </h3>
+              <p class="govuk-body card__description" data-hj-suppress="">
+
+              </p>
+              <div class="govuk-!-padding-bottom-4">
+                <strong>RES B C1 Com Worker</strong><br>
+                8.30am to 11.45am<br>
+                Landing c1
+              </div>
+
+            </div>
+
+          </li>
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card__content" data-test="afternoonEvents">
+              <h3 class="govuk-heading-m card__heading">
+                Afternoon
+              </h3>
+              <p class="govuk-body card__description" data-hj-suppress="">
+
+              </p>
+              <div class="govuk-!-padding-bottom-4">
+                <strong>RES B C1 Com Worker</strong><br>
+                1.45pm to 4.45pm<br>
+                Landing c1
+              </div>
+
+            </div>
+
+          </li>
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card__content" data-test="eveningEvents">
+              <h3 class="govuk-heading-m card__heading">
+                Evening
+              </h3>
+              <p class="govuk-body card__description" data-hj-suppress="">
+
+                <strong data-test="no-activities">No activities</strong>
+
+
+              </p>
+            </div>
+
+          </li>
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card--clickable content-card" data-test="timetableLink">
+              <img src="/public/images/profile/image_timetable.jpg" alt="" loading="lazy">
+              <h3 class="govuk-heading-m">
+                <a href="./timetable/" class="card__content govuk-link govuk-link--no-visited-state card_link">View my timetable</a>
+              </h3>
+            </div>
+
+          </li>
+        </ul>
+        <a href="https://thestudio.content-hub.prisoner.service.justice.gov.uk/tags/1341/" class="govuk-!-font-size-24 card-title govuk-link govuk-!-font-weight-regular govuk-link--no-visited-state" target="_blank">
+          <span>Read more about learning and skills</span>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="card-background grey">
+      <div class="govuk-width-container" data-test="incentive-container">
+        <h2 class="govuk-heading-m">Incentives (IEP)</h2>
+
+        <ul class="govuk-grid-row card-group">
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card__content" data-test="currentLevel">
+              <h3 class="govuk-heading-m card__heading">
+                My current level:
+              </h3>
+              <p class="govuk-body card__description" data-hj-suppress="">Enhanced
+              </p>
+            </div>
+
+          </li>
+        </ul>
+        <a href="https://thestudio.content-hub.prisoner.service.justice.gov.uk/tags/1417/" class="govuk-!-font-size-24 card-title govuk-link govuk-!-font-weight-regular govuk-link--no-visited-state" data-test="incentivesLink"  target="_blank">
+          <span>Read more about incentives (IEP)</span>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="card-background" data-test="money-container">
+      <div class="govuk-width-container sensitive-card-container">
+        <h2 class="govuk-heading-m card-title">Money
+
+          <a href="#" class="sensitive-card-control govuk-link govuk-!-font-weight-regular govuk-link--no-visited-state" data-is-closed="true">
+            <span class="open">Open</span>
+            <span class="closed hidden">Close</span>
+          </a>
+
+        </h2>
+
+        <ul class="govuk-grid-row card-group sensitive-cards">
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card__content card--clickable sensitive-card" data-is-closed="true" data-test="moneySpends">
+              <h3 class="govuk-heading-m card__heading card-title">
+                <a href="#" class="govuk-link govuk-link--no-visited-state card_link">Spends</a>
+                <span class="open hidden">-</span><span class="closed">+</span>
+              </h3>
+              <p class="govuk-body card__description" data-hj-suppress=""></p>
+              <div class="hidden sensitive">
+                <p>My current balance is:</p>
+                <strong data-test="money-spends">£1,019.11</strong>
+              </div>
+              <p></p>
+            </div>
+
+          </li>
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card__content card--clickable sensitive-card" data-is-closed="true" data-test="moneyPrivate">
+              <h3 class="govuk-heading-m card__heading card-title">
+                <a href="#" class="govuk-link govuk-link--no-visited-state card_link">Private</a>
+                <span class="open hidden">-</span><span class="closed">+</span>
+              </h3>
+              <p class="govuk-body card__description" data-hj-suppress=""></p>
+              <div class="hidden sensitive">
+                <p>My current balance is:</p>
+                <strong data-test="money-private">£10.00</strong>
+              </div>
+              <p></p>
+            </div>
+
+          </li>
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card__content card--clickable sensitive-card" data-is-closed="true" data-test="moneySavings">
+              <h3 class="govuk-heading-m card__heading card-title">
+                <a href="#" class="govuk-link govuk-link--no-visited-state card_link">Savings</a>
+                <span class="open hidden">-</span><span class="closed">+</span>
+              </h3>
+              <p class="govuk-body card__description" data-hj-suppress=""></p>
+              <div class="hidden sensitive">
+                <p>My current balance is:</p>
+                <strong data-test="money-savings">£10.00</strong>
+              </div>
+              <p></p>
+            </div>
+
+          </li>
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card--clickable content-card" data-test="moneyLink">
+              <img src="/public/images/profile/image_transactions.jpg" alt="" loading="lazy">
+              <h3 class="govuk-heading-m">
+                <a href="./money/spends" class="card__content govuk-link govuk-link--no-visited-state card_link">View my transactions</a>
+              </h3>
+            </div>
+
+          </li>
+        </ul>
+        <a href="https://thestudio.content-hub.prisoner.service.justice.gov.uk/tags/872/" class="govuk-!-font-size-24 card-title govuk-link govuk-!-font-weight-regular govuk-link--no-visited-state"  target="_blank">
+          <span>Read more about money and debt</span>
+        </a>
+
+      </div>
+    </div>
+
+
+    <div class="card-background grey">
+      <div class="govuk-width-container" data-test="visits-container">
+        <h2 class="govuk-heading-m">Visits</h2>
+
+        <ul class="govuk-grid-row card-group">
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card__content" data-test="nextVisit">
+              <h3 class="govuk-heading-m card__heading">
+                My next visit
+              </h3>
+              <p class="govuk-body card__description" data-hj-suppress="">
+                No upcoming visit
+
+              </p>
+            </div>
+
+          </li>
+
+
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card--clickable content-card" data-test="approvedVisitors">
+              <img src="/public/images/profile/image_visitors.jpg" alt="" loading="lazy">
+              <h3 class="govuk-heading-m">
+                <a href="./visits/approved-visitors" class="card__content govuk-link govuk-link--no-visited-state card_link">View my visitors - social</a>
+              </h3>
+            </div>
+
+          </li>
+        </ul>
+        <a href="https://thestudio.content-hub.prisoner.service.justice.gov.uk/tags/1133/" class="govuk-!-font-size-24 card-title govuk-link govuk-!-font-weight-regular govuk-link--no-visited-state" data-test="visitsLink"  target="_blank">
+          <span>Read more about visits</span>
+        </a>
+
+      </div>
+    </div>
+
+
+    <div class="card-background">
+      <div class="govuk-width-container" data-test="adjudications-container">
+        <h2 class="govuk-heading-m">Adjudications</h2>
+
+        <ul class="govuk-grid-row card-group">
+          <li class="govuk-grid-column-one-quarter card-group__item">
+
+            <div class="card card--clickable content-card" data-test="adjudications">
+              <img src="/public/images/profile/image_adjudications.jpg" alt="" loading="lazy">
+              <h3 class="govuk-heading-m">
+                <a href="./adjudications/" class="card__content govuk-link govuk-link--no-visited-state card_link">View my adjudications</a>
+              </h3>
+            </div>
+
+          </li>
+        </ul>
+        <a href="https://thestudio.content-hub.prisoner.service.justice.gov.uk/content/4193/" class="govuk-!-font-size-24 card-title govuk-link govuk-!-font-weight-regular govuk-link--no-visited-state" data-test="adjudicationsLink"  target="_blank">
+          <span>Read more about adjudications</span>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+  </div>
+
+
+{% endblock %}

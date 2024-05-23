@@ -1,0 +1,12 @@
+{% for request in data['requests'] %}
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell date">{{ request.date_sent }}</td>
+  <td class="govuk-table__cell">{{ request.request_title }}</td>
+  <td class="govuk-table__cell">{{ request.department }}</td>
+  <td class="govuk-table__cell">
+    <strong class="govuk-tag govuk-tag--grey">{{request.status}}</strong>
+  </td>
+  <td class="govuk-table__cell">{{ request.response_due }}</td>
+  <td class="govuk-table__cell"><a href="./view/request-1">View</a></td>
+</tr>
+{% endfor %}

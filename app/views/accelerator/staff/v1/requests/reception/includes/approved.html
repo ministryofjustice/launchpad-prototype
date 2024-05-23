@@ -1,4 +1,17 @@
-<h2 class="govuk-heading-m">Approved requests</h2>
+<div class="panel-header">
+	<h2 class="govuk-heading-m">Approved requests</h2>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+	Download data
+</button>
+</div>
+
+<div class="panel-content">
+
+<div class="filters-column">
+	{% include "./filters.html" %}
+</div>
+
+<div class="table-column">
 <table class="govuk-table">
 	<thead class="govuk-table__head">
 		<tr class="govuk-table__row">
@@ -78,3 +91,5 @@
 		</tr>
 	</tbody>
 </table>
+</div>
+</div>

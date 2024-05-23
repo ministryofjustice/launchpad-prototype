@@ -1,0 +1,66 @@
+{% extends "layouts/launchpad.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1.3" %}
+
+{% block content %}
+
+  <section class="govuk-grid-row govuk-width-container">
+    <time class="govuk-heading-l today-date">{{ 0 | getDate }}</time>
+  </section>
+
+  <div class="container-background-black tiles-panel" data-test="tiles-panel">
+    <section class="govuk-width-container">
+        <div id="tiles">
+          <div class="link-tile">
+              <a href="" target="_blank">
+                  <img src="/public/images/home/Unilink.jpg"
+                      alt="link tile image"
+                      loading="lazy" />
+                  <footer class="govuk-!-padding-4 govuk-grid-column-full">
+                      <h3 class="govuk-heading-m">Self-service</h3>
+                      <p class="govuk-body">Access the kiosk apps.</p>
+                  </footer>
+              </a>
+          </div>
+          <div class="link-tile">
+              <a href="https://thestudio.content-hub.prisoner.service.justice.gov.uk/" target="_blank">
+                  <img src="/public/images/home/ContentHub.jpg"
+                      alt="link tile image"
+                      loading="lazy" />
+                  <footer class="govuk-!-padding-4 govuk-grid-column-full">
+                      <h3 class="govuk-heading-m">Content Hub</h3>
+                      <p class="govuk-body">Watch, read and listen to local and national content.</p>
+                  </footer>
+              </a>
+          </div>
+          <div class="link-tile">
+              <a href="https://thestudio.content-hub.prisoner.service.justice.gov.uk/tags/785" target="_blank">
+                  <img src="/public/images/home/NPR.jpg"
+                      alt="link tile image"
+                      loading="lazy" />
+                  <footer class="govuk-!-padding-4 govuk-grid-column-full">
+                      <h3 class="govuk-heading-m">NPR</h3>
+                      <p class="govuk-body">Listen to 24/7 music, talk, requests and playbacks.</p>
+                  </footer>
+              </a>
+          </div>
+          <div class="link-tile">
+              <a href="https://insidetime.org/" target="_blank">
+                  <img src="/public/images/home/InsideTime.jpg"
+                      alt="link tile image"
+                      loading="lazy" />
+                  <footer class="govuk-!-padding-4 govuk-grid-column-full">
+                      <h3 class="govuk-heading-m">Inside Time</h3>
+                      <p class="govuk-body">Read the national newspaper for prisoners and detainees.</p>
+                  </footer>
+              </a>
+          </div>
+        </div>
+    </section>
+
+
+  </div>
+
+
+{% endblock %}
