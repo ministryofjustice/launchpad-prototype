@@ -1,0 +1,37 @@
+{% extends "layouts/launchpad.html" %}
+
+{% set version="v1" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row govuk-width-container" id="top-row-wrapper">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Something went wrong
+    </h1>
+
+    <form class="form" action="/path/of/next/page" method="post">
+
+      <p class="govuk-body-l">
+        There was a problem loading the page.
+      </p>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}
