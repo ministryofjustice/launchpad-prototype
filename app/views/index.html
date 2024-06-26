@@ -2,75 +2,85 @@
 
 {% set pageName="Home" %}
 
+
+{% block header %}
+{% set page = '/' %}
+
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: serviceName,
+  serviceUrl: "/",
+  containerClasses: "govuk-width-container"
+}) }}
+
+
+<div class="app-masthead">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="app-masthead__title govuk-heading-xl govuk-!-margin-bottom-3">
+          {{ serviceName }} team prototypes
+        </h1>
+        <div class="app-masthead__description">
+          <p class="govuk-body-l">
+            This prototype hub belongs to the is the Lauchpad team and contains prototypes and experiments for prisoner and staff facing interfaces.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
 {% block content %}
 
-
-<h1 class="govuk-heading-xl govuk-!-margin-top-5 govuk-!-margin-bottom-0">
-  {{ serviceName }} prototypes
-</h1>
-
-<hr />
-
-
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
 
-    <section>
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">
-        v1 - Moving the profile to Launchpad</h2>
-      <p>This prototype is for the piece of work after private beta to move the profile from the content hub to Launhcpad.</p>
-      <p>
-        <a href="/v1/" target="_blank">Prototype</a> |
-        <a href="https://www.figma.com/file/vO7AB9W8CteHT50DTpZd0s/Bringing-the-prisoner-profile-into-Launchpad?type=design&node-id=0-1&mode=design" target="_blank">Figma screens</a> |
-        <a href="https://dsdmoj.atlassian.net/wiki/spaces/LAUNCHPAD/pages/4596335681/Moving+the+prisoner+profile+to+Launchpad" target="_blank">Design history</a> |
-        <a href="https://dsdmoj.atlassian.net/browse/LNP-360" target="_blank">Jira LNP-360</a>
-      </p>
+    <h2 class="govuk-heading-l govuk-!-margin-top-5">Projects</h2>
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">
-        v1-2 - Removed the link to Inside Time</h2>
-      <p>Inside Time is not going live so have created a version of Launchpad Home without that tile.</p>
-      <p>
-        <a href="/v1-2/" target="_blank">Prototype</a>
-      </p>
-
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">
-        v1-3 - Launchpad Home for Berwyn</h2>
-      <p>Berwyn does not have the prisoner profile, this is a version of Launchpad Home withoout the Profile link or timetable.</p>
-      <p>
-        <a href="/v1-3/" target="_blank">Prototype</a> | <a href="https://www.figma.com/proto/5BPxZPu0rI4tnRFXFDfpCt/LNP-369-Launchpad-design-for-HMP-Berwyn-without-Prisoner-profile?node-id=1%3A23&t=hjRQnqLXMj9yO2kD-1" target="_blank">Figma</a>
-      </p>
-
-
-    </section>
-    <hr>
-    <section>
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">
-        Accelerator work / prisoners</h2>
-      <p>Prisoner facing screens.</p>
-      <p>
-        <a href="/accelerator/pip/v1/" target="_blank">Prototype</a> |
-      </p>
-    </section>
-    <hr>
-
-    <section>
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">
-        Accelerator work / staff</h2>
-      <p>Staff facing screens</p>
-      <p>
-        <a href="/accelerator/staff/v1/" target="_blank">Prototype</a> |
-      </p>
+    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6 govuk-!-padding-left-0">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+          <a href="/launchpad/" class="govuk-link--no-visited-state">Launchpad</a>
+        </h3>
+        <p class="govuk-body">
+          Prototypes for prisoner facing products that sit within the Launchpad product set.
+        </p>
     </section>
 
+    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+          <a href="/managing-app-requests/" class="govuk-link--no-visited-state">Managing App Requests</a>
+        </h3>
+        <p class="govuk-body">
+          Prototypes for staff facing Managing App Requests which sits in the DPS product set.
+        </p>
+    </section>
 
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+
+
+    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6 govuk-!-padding-left-0">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+          <a href="/accelerator/" class="govuk-link--no-visited-state">Accelerator</a>
+        </h3>
+        <p class="govuk-body">
+          Prototypes created for the Launchpad accelerator programme.
+        </p>
+    </section>
+
+    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+          <a href="/sandbox/" class="govuk-link--no-visited-state">Sandbox</a>
+        </h3>
+        <p class="govuk-body">
+          Sandbox area to try things out.
+        </p>
+    </section>
 
   </div>
-
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-m govuk-!-margin-top-5">Sandbox</h2>
-    <p><a href="/sandbox/damage-obligations" target="_blank">Damage obligations</a></p>
-  </div>
-
 
 </div>
 

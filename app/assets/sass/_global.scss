@@ -12,4 +12,10 @@ body.launchpad > .govuk-width-container  {
 
 .govuk-main-wrapper {
   padding-bottom: 0;
+  min-height: 0px;
+}
+
+
+.govuk-footer__copyright-logo {
+    background-image: url(/public/images/govuk-crest-2x.png);
 }

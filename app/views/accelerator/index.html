@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Accelerator" %}
+
+
+{% block header %}
+{% set page = '/' %}
+
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: serviceName,
+  serviceUrl: "/",
+  containerClasses: "govuk-width-container"
+}) }}
+
+
+<div class="app-masthead">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="app-masthead__title govuk-heading-xl govuk-!-margin-bottom-3">
+          {{ pageName }}
+        </h1>
+        <div class="app-masthead__description">
+          <p class="govuk-body-l">
+            This section of the Launchpad prototype hub contains prototypes created for the accelerator programme.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <table class="govuk-table govuk-!-margin-top-5">
+      <caption class="govuk-table__caption govuk-caption-xl">Prototype versions</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" width="15%">Version</th>
+          <th scope="col" class="govuk-table__header" width="25%">Status</th>
+          <th scope="col" class="govuk-table__header">What changed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        {% include "./table-rows/staff.html" %}
+        {% include "./table-rows/pip.html" %}
+      </tbody>
+    </table>
+
+
+  </div>
+
+
+</div>
+
+{% endblock %}

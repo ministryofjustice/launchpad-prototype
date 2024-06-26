@@ -13,6 +13,8 @@ $govuk-page-width: $moj-page-width;
 
 @import "content-hub";
 
+@import './components/app-masthead';
+
 @import './launchpad/components/header-bar';
 @import './launchpad/components/events-summary';
 @import './launchpad/components/tiles-panel';
