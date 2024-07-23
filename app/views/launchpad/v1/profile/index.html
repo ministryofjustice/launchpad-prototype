@@ -1,8 +1,7 @@
-{% extends "layouts/launchpad.html" %}
-
+{% extends "layouts/launchpad-home.html" %}
 {% set pageName="John's Profile" %}
-
 {% set bodyClasses = 'profile' %}
+{% set homeurl="/launchpad/v1/" %}
 
 {% block content %}
 
@@ -15,7 +14,7 @@
         <div class="govuk-breadcrumbs">
           <ol class="govuk-breadcrumbs__list">
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="../">Home</a>
+              <a class="govuk-breadcrumbs__link" href="{{homeurl}}">Home</a>
             </li>
           </ol>
         </div>

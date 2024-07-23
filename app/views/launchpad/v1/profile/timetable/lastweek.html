@@ -1,8 +1,7 @@
-{% extends "layouts/launchpad.html" %}
-
+{% extends "layouts/launchpad-home.html" %}
 {% set pageName="Timetable" %}
-
 {% set bodyClasses = 'timetable' %}
+{% set homeurl="/launchpad/v1/" %}
 
 {% block content %}
 
@@ -14,10 +13,10 @@
       <div class="govuk-breadcrumbs">
         <ol class="govuk-breadcrumbs__list">
           <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="../../">Home</a>
+            <a class="govuk-breadcrumbs__link" href="{{homeurl}}">Home</a>
           </li>
           <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="../">John's profile</a>
+            <a class="govuk-breadcrumbs__link" href="{{homeurl}}/profile/">John's profile</a>
           </li>
         </ol>
       </div>

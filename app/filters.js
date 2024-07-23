@@ -9,12 +9,8 @@ const addFilter = govukPrototypeKit.views.addFilter
 // Add your filters here
 
 addFilter('getDate', (x) => {
-  const date = new Date();
-      date.setDate(date.getDate() + x);
-
-      return date.toLocaleDateString('en-GB', {
-          weekday: 'long',
-          day: 'numeric',
-          month: 'long',
-      })
-  });
+    const date = new Date();
+    date.setDate(date.getDate() + x);
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+});
