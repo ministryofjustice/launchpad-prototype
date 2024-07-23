@@ -6,6 +6,8 @@
   background-color:  govuk-colour("black");
 }
 
-body.launchpad .connect-dps-common-header__navigation__item > button.connect-dps-common-header__menu-toggle > span {
-  border-left: transparent !important;
+body.launchpad, body.launchpad-home{
+   .connect-dps-common-header__navigation__item > button.connect-dps-common-header__menu-toggle > span {
+     border-left: transparent !important;
+  }
 }
