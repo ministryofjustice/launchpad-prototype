@@ -8,13 +8,16 @@
 $govuk-global-styles: true;
 $path: "/assets/images/";
 
-$moj-page-width: 1200px;
+$moj-page-width: 1170px;
 $govuk-page-width: $moj-page-width;
 
+// Content Hub
 @import "content-hub";
 
+// App Masthead
 @import './components/app-masthead';
 
+// Launchpad
 @import './launchpad/components/header-bar';
 @import './launchpad/components/events-summary';
 @import './launchpad/components/tiles-panel';
@@ -22,16 +25,21 @@ $govuk-page-width: $moj-page-width;
 @import './launchpad/components/internal-link-tile';
 @import "./launchpad/local";
 @import './launchpad/pages/homepage';
+@import './launchpad/pages/settings';
 
+// Profile
 @import "global";
 @import "profile";
 @import "timetable";
-
-
 @import "profile.scss";
 @import "timetable.scss";
 
-// Experimental styles
-@import "accellerator.scss";
+// DPS styles
 @import "dps.scss";
+@import "dps-header-bar.scss";
+
+// Accelerator
+@import "accellerator.scss";
+
+// Sandbox
 @import "sandbox.scss";

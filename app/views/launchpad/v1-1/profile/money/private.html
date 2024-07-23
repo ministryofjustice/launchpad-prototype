@@ -1,0 +1,180 @@
+{% extends "layouts/launchpad-home.html" %}
+{% set pageName="Transactions - Private" %}
+{% set bodyClasses = 'profile' %}
+{% set version="v1.1" %}
+{% set homeurl="/launchpad/v1-1/" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+      <nav aria-label="breadcrumb">
+        <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="{{homeurl}}">Home</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="{{homeurl}}/profile">John's profile</a>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <h1 class="govuk-heading-xl">
+        {{pageName}}
+      </h1>
+    </div>
+  </div>
+
+
+  <div class="govuk-width-container">
+
+    <div class="govuk-body">
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with my transactions
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">For more help:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="https://thestudio.content-hub.prisoner.service.justice.gov.uk/content/8534" class="govuk-link" target="_blank">read more about what this page means</a>
+            </li>
+            <li>put in an app</li>
+            <li>ask a member of staff</li>
+          </ul>
+        </div>
+      </details>
+
+      <ul class="govuk-tabs__list">
+
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="./spends">
+            Spends
+          </a>
+        </li>
+
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="./private">
+            Private
+          </a>
+        </li>
+
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="./savings">
+            Savings
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="./damage-obligations">
+            Damage obligations
+          </a>
+        </li>
+      </ul>
+
+      <div class="govuk-tabs__panel">
+        <ul class="transaction__balances">
+          <li>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Current balance</h2>
+
+            <p class="govuk-body govuk-!-margin-top-5" data-hj-suppress="">£20.00</p>
+
+          </li>
+        </ul>
+
+
+        <div class="transactions__selection_wrapper">
+          <form method="GET">
+            <div class="transactions__selection__form">
+              <input type="hidden" name="accountType" value="private">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="selected-date">
+                  View by month and year
+                </label>
+
+                <select class="govuk-select" id="selected-date" name="selectedDate">
+                  <option value="2023-11-01">November 2023</option>
+                  <option value="2023-10-01">October 2023</option>
+                  <option value="2023-09-01">September 2023</option>
+                  <option value="2023-08-01">August 2023</option>
+                  <option value="2023-07-01">July 2023</option>
+                  <option value="2023-06-01">June 2023</option>
+                  <option value="2023-05-01">May 2023</option>
+                  <option value="2023-04-01">April 2023</option>
+                  <option value="2023-03-01">March 2023</option>
+                  <option value="2023-02-01">February 2023</option>
+                  <option value="2023-01-01">January 2023</option>
+                  <option value="2022-12-01">December 2022</option>
+                </select>
+              </div>
+
+              <button class="govuk-button" data-module="govuk-button">
+                View
+              </button>
+
+            </div>
+          </form>
+        </div>
+
+        <div id="transactions" data-hj-suppress="">
+          <table class="govuk-table">
+
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+
+                <th scope="col" class="govuk-table__header">Payment date</th>
+
+                <th scope="col" class="govuk-table__header">Money in</th>
+
+                <th scope="col" class="govuk-table__header">Money out</th>
+
+                <th scope="col" class="govuk-table__header">Balance</th>
+
+                <th scope="col" class="govuk-table__header">Payment description</th>
+
+                <th scope="col" class="govuk-table__header">Prison</th>
+
+              </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">12 November 2023</td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">-£10.00</td>
+                <td class="govuk-table__cell">£10.00</td>
+                <td class="govuk-table__cell">Transfer to savings</td>
+                <td class="govuk-table__cell">HMP/YOI Cookham Wood</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">10 November 2023</td>
+                <td class="govuk-table__cell">£20.00</td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">£20.00</td>
+                <td class="govuk-table__cell">Money in from family</td>
+                <td class="govuk-table__cell">HMP/YOI Cookham Wood</td>
+              </tr>
+
+
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {% endblock %}

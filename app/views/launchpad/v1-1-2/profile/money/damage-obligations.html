@@ -1,0 +1,166 @@
+{% extends "layouts/launchpad-home.html" %}
+{% set pageName="Transactions" %}
+{% set bodyClasses = 'profile' %}
+{% set homeurl="/launchpad/v1-1-2/" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+
+      <nav aria-label="breadcrumb">
+        <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="{{homeurl}}">Home</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="{{homeurl}}profile/">John's profile</a>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <h1 class="govuk-heading-xl">
+        {{pageName}}
+      </h1>
+    </div>
+  </div>
+
+
+  <div class="govuk-width-container">
+    <div class="govuk-body">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with my transactions
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">For more help:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="https://thestudio.content-hub.prisoner.service.justice.gov.uk/content/8534" class="govuk-link" target="_blank">read more about what this page means</a>
+            </li>
+            <li>put in an app</li>
+            <li>ask a member of staff</li>
+          </ul>
+        </div>
+      </details>
+
+      <ul class="govuk-tabs__list">
+
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="./spends">
+            Spends
+          </a>
+        </li>
+
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="./private">
+            Private
+          </a>
+        </li>
+
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="./savings">
+            Savings
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="./damage-obligations">
+            Damage obligations
+          </a>
+        </li>
+      </ul>
+
+      <div class="govuk-tabs__panel">
+        <ul class="transaction__balances">
+          <li>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Current balance</h2>
+            <p class="govuk-body govuk-!-margin-top-5" data-hj-suppress="">£290</p>
+          </li>
+        </ul>
+        <div class="transactions__selection_wrapper">
+          <form method="GET">
+            <div class="transactions__selection__form">
+              <input type="hidden" name="accountType" value="spends">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="selected-date">
+                  View by month and year
+                </label>
+
+                <select class="govuk-select" id="selected-date" name="selectedDate">
+                  <option value="2023-11-01">November 2023</option>
+                  <option value="2023-10-01">October 2023</option>
+                  <option value="2023-09-01">September 2023</option>
+                  <option value="2023-08-01">August 2023</option>
+                  <option value="2023-07-01">July 2023</option>
+                  <option value="2023-06-01">June 2023</option>
+                  <option value="2023-05-01">May 2023</option>
+                  <option value="2023-04-01">April 2023</option>
+                  <option value="2023-03-01">March 2023</option>
+                  <option value="2023-02-01">February 2023</option>
+                  <option value="2023-01-01">January 2023</option>
+                  <option value="2022-12-01">December 2022</option>
+                </select>
+              </div>
+              <button class="govuk-button" data-module="govuk-button">
+                View
+              </button>
+
+            </div>
+          </form>
+        </div>
+
+        <div id="transactions" data-hj-suppress="">
+          <table class="govuk-table">
+
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Adjudication number</th>
+                <th scope="col" class="govuk-table__header">Payment start / end</th>
+                <th scope="col" class="govuk-table__header">Total amount</th>
+                <th scope="col" class="govuk-table__header">Amount paid</th>
+                <th scope="col" class="govuk-table__header">Amount owed</th>
+                <th scope="col" class="govuk-table__header">Prison</th>
+                <th scope="col" class="govuk-table__header">Description of damage</th>
+              </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">123451131</td>
+                <td class="govuk-table__cell">20 November 2019 to 20 November 2021</td>
+                <td class="govuk-table__cell">£300</td>
+                <td class="govuk-table__cell">£50</td>
+                <td class="govuk-table__cell">£250</td>
+                <td class="govuk-table__cell">Wayland (HMP)</td>
+                <td class="govuk-table__cell">Damage to pool table</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">131231456</td>
+                <td class="govuk-table__cell">3 December 2018 to 3 December 2021</td>
+                <td class="govuk-table__cell">£190</td>
+                <td class="govuk-table__cell">£150.00</td>
+                <td class="govuk-table__cell">£40.00</td>
+                <td class="govuk-table__cell">Wayland (HMP)</td>
+                <td class="govuk-table__cell">Bed frame smashed in cell A-1-012</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+  {% endblock %}

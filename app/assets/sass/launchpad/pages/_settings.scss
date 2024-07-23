@@ -7,6 +7,17 @@
     .table-cell-vertical-align {
         td {
             vertical-align: middle;
+            &:nth-of-type(4) {
+              width: 25%;
+            }
+          }
+        img {
+          vertical-align: middle;
+          margin-right: govuk-spacing(2);
+        }
+        ul {
+          margin: 0;
+          padding-left: 1em;
         }
     }
 
@@ -19,23 +30,27 @@
             height: 78px;
             width: 104px;
             margin-top: 0;
-            margin-bottom: govuk-spacing(1);
+            margin-bottom: 10px;
+            margin-right: govuk-spacing(2);
         }
 
         p {
             margin: 0;
+            font-weight: 600;
         }
-        
+
         @media(min-width: 80em) {
             align-items: center;
             flex-direction: row;
-            margin-left: govuk-spacing(2);
 
             p {
                 margin-bottom: 0;
                 margin-left: govuk-spacing(2);
             }
-    
+            img {
+              margin: 0;
+            }
+
         }
     }
 }

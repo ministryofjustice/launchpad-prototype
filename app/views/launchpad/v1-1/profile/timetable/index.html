@@ -1,0 +1,390 @@
+{% extends "layouts/launchpad-home.html" %}
+{% set pageName="Timetable" %}
+{% set bodyClasses = 'timetable' %}
+{% set version="v1.1" %}
+{% set homeurl="/launchpad/v1-1/" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+      <nav aria-label="breadcrumb">
+        <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="{{homeurl}}">Home</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="{{homeurl}}/profile">John's profile</a>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+    <div class="hub-header timetable-header"  id="main-content">
+
+      <h1 class="govuk-heading-xl">
+        {{pageName}}
+      </h1>
+
+      <nav class="timetable-nav">
+          <a href="./lastweek" class="govuk-link">Last week</a>
+          <span>This week</span>
+          <a href="./nextweek" class="govuk-link">Next week</a>
+      </nav>
+  </div>
+</div>
+
+  <div class=" govuk-!-padding-bottom-7">
+    <div class="govuk-width-container">
+      <div class="sticky timetable-day timetable-headings" aria-hidden="true">
+        <div class="timetable-day-blocks">
+        <div><h4>Morning</h4></div>
+        <div><h4>Afternoon</h4></div>
+        <div><h4>Evening</h4></div>
+      </div>
+  </div>
+      <div class=" govuk-body timetable-day">
+        <h3 data-test="date" class="govuk-!-margin-bottom-3">Today</h3>
+        <!--
+        <div data-test="time-of-day">
+          <h4 class="day-block-finished">Morning</h4>
+          <h4>Afternoon</h4>
+          <h4>Evening</h4>
+        </div>
+        -->
+        <div class="timetable-day-blocks" data-test="Today">
+          <div class="govuk-body day-block-finished" data-hj-suppress="">
+            <div class="" data-test="8.30am to 12.00pm">
+              <div class="timetable-time">8.30am to 11.45am</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-body" data-hj-suppress="">
+            <div class="" data-test="12.00pm to 5.00pm">
+              <div class="timetable-time">1.45pm to 4.45pm</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-body" data-hj-suppress="">
+            <div class="timetable-empty">
+              <div class="timetable-time"></div>
+              <strong>No activities</strong>
+            </div>
+          </div>
+
+        </div>
+
+        <h3 data-test="date" class="govuk-!-margin-bottom-3">Tomorrow</h3>
+        <!--
+        <div data-test="time-of-day">
+          <h4 class="day-block-finished">Morning</h4>
+          <h4>Afternoon</h4>
+          <h4>Evening</h4>
+        </div>
+        -->
+        <div class="timetable-day-blocks" data-test="Tomorrow">
+
+          <div class="govuk-body" data-hj-suppress="">
+            <div class="" data-test="8.30am to 12.00pm">
+              <div class="timetable-time">8.30am to 11.45am</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+          </div>
+
+
+          <div class="govuk-body" data-hj-suppress="">
+            <div class="" data-test="12.00pm to 5.00pm">
+              <div class="timetable-time">1.45pm to 4.45pm</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-body" data-hj-suppress="">
+            <div class="timetable-empty">
+              <div class="timetable-time"></div>
+              <strong>No activities</strong>
+            </div>
+          </div>
+
+        </div>
+
+        <h3 data-test="date" class="govuk-!-margin-bottom-3">Saturday 28 October</h3>
+        <!--
+        <div data-test="time-of-day">
+          <h4 class="day-block-finished">Morning</h4>
+          <h4>Afternoon</h4>
+          <h4>Evening</h4>
+        </div>
+        -->
+        <div class="timetable-day-blocks" data-test="Saturday 28 October">
+
+
+          <div class="govuk-body" data-hj-suppress="">
+
+            <div class="" data-test="8.30am to 12.00pm">
+              <div class="timetable-time">10.00am to 11.00am</div>
+              <div class="timetable-desc">
+                <strong>Catholic Service</strong>
+                Worship room 1
+              </div>
+            </div>
+
+          </div>
+
+          <div class="govuk-body" data-hj-suppress="">
+
+            <div class="" data-test="12.00pm to 5.00pm">
+              <div class="timetable-time">1.45pm to 4.45pm</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="govuk-body" data-hj-suppress="">
+            <div class="timetable-empty">
+              <div class="timetable-time"></div>
+              <strong>No activities</strong>
+            </div>
+          </div>
+
+
+        </div>
+
+        <h3 data-test="date" class="govuk-!-margin-bottom-3">Sunday 29 October</h3>
+        <!--
+        <div data-test="time-of-day">
+          <h4 class="day-block-finished">Morning</h4>
+          <h4>Afternoon</h4>
+          <h4>Evening</h4>
+        </div>
+        -->
+        <div class="timetable-day-blocks" data-test="Sunday 29 October">
+
+
+          <div class="govuk-body" data-hj-suppress="">
+
+            <div class="" data-test="8.30am to 12.00pm">
+              <div class="timetable-time">8.30am to 11.45am</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="govuk-body" data-hj-suppress="">
+
+            <div class="" data-test="12.00pm to 5.00pm">
+              <div class="timetable-time">1.45pm to 4.45pm</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="govuk-body" data-hj-suppress="">
+            <div class="timetable-empty">
+              <div class="timetable-time"></div>
+              <strong>No activities</strong>
+            </div>
+          </div>
+
+
+        </div>
+
+        <h3 data-test="date" class="govuk-!-margin-bottom-3">Monday 30 October</h3>
+        <!--
+        <div data-test="time-of-day">
+          <h4 class="day-block-finished">Morning</h4>
+          <h4>Afternoon</h4>
+          <h4>Evening</h4>
+        </div>
+        -->
+        <div class="timetable-day-blocks" data-test="Monday 30 October">
+
+
+          <div class="govuk-body" data-hj-suppress="">
+
+            <div class="" data-test="8.30am to 12.00pm">
+              <div class="timetable-time">8.30am to 11.45am</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="govuk-body" data-hj-suppress="">
+
+            <div class="" data-test="12.00pm to 5.00pm">
+              <div class="timetable-time">1.45pm to 4.45pm</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="govuk-body" data-hj-suppress="">
+            <div class="timetable-empty">
+              <div class="timetable-time"></div>
+              <strong>No activities</strong>
+            </div>
+          </div>
+
+
+        </div>
+
+        <h3 data-test="date" class="govuk-!-margin-bottom-3">Tuesday 31 October</h3>
+        <!--
+        <div data-test="time-of-day">
+          <h4 class="day-block-finished">Morning</h4>
+          <h4>Afternoon</h4>
+          <h4>Evening</h4>
+        </div>
+        -->
+        <div class="timetable-day-blocks" data-test="Tuesday 31 October">
+
+
+          <div class="govuk-body" data-hj-suppress="">
+
+            <div class="" data-test="8.30am to 12.00pm">
+              <div class="timetable-time">8.30am to 11.45am</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="govuk-body" data-hj-suppress="">
+
+            <div class="" data-test="12.00pm to 5.00pm">
+              <div class="timetable-time">1.45pm to 4.45pm</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="govuk-body" data-hj-suppress="">
+            <div class="timetable-empty">
+              <div class="timetable-time"></div>
+              <strong>No activities</strong>
+            </div>
+          </div>
+
+
+        </div>
+
+        <h3 data-test="date" class="govuk-!-margin-bottom-3">Wednesday 1 November</h3>
+        <!--
+        <div data-test="time-of-day">
+          <h4 class="day-block-finished">Morning</h4>
+          <h4>Afternoon</h4>
+          <h4>Evening</h4>
+        </div>
+        -->
+        <div class="timetable-day-blocks" data-test="Wednesday 1 November">
+
+
+          <div class="govuk-body" data-hj-suppress="">
+
+            <div class="" data-test="8.30am to 12.00pm">
+              <div class="timetable-time">8.30am to 11.45am</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="govuk-body" data-hj-suppress="">
+
+            <div class="" data-test="12.00pm to 5.00pm">
+              <div class="timetable-time">1.45pm to 4.45pm</div>
+              <div class="timetable-desc">
+                <strong>RES B C1 Com Worker</strong>
+                Landing c1
+              </div>
+            </div>
+
+          </div>
+
+          <div class="govuk-body" data-hj-suppress="">
+            <div class="timetable-empty">
+              <div class="timetable-time"></div>
+              <strong>No activities</strong>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="govuk-body timetable-header timetable-footer">
+
+        <nav class="timetable-nav">
+            <a href="./lastweek" class="govuk-link">Last week</a>
+            <span>This week</span>
+            <a href="./nextweek" class="govuk-link">Next week</a>
+        </nav>
+
+      </div>
+
+    </div>
+
+  {% endblock %}
