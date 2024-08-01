@@ -1,0 +1,146 @@
+<div class="moj-filter">
+
+  <div class="moj-filter__header">
+    <div class="moj-filter__header-title">
+      <h2 class="govuk-heading-s">Filter</h2>
+    </div>
+
+    <div class="moj-filter__header-action">
+
+    </div>
+  </div>
+
+  <div class="moj-filter__content">
+    <div class="moj-filter__selected">
+      <div class="moj-filter__selected-heading">
+        <div class="moj-filter__heading-title">
+          <h2 class="govuk-heading-s">Selected filters</h2>
+        </div>
+
+        <div class="moj-filter__heading-action">
+          <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="moj-filter__options">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Application type
+          </legend>
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+            {% for app in data['apps'] %}
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type">
+                  {{ app.type }} ({{ app.amount }})
+                </label>
+              </div>
+            {% endfor %}
+
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Wing
+          </legend>
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+            {% for wing in data['wings'] %}
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type">
+                  {{ wing.name }} ({{ wing.amount }})
+                </label>
+              </div>
+            {% endfor %}
+
+          </div>
+        </fieldset>
+      </div>
+
+
+			<div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="date">
+          Date range
+        </label>
+				<div class="govuk-date-input" id="date">
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-submitted-from-day">
+		            Day
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-submitted-from-day" name="date-submitted-from-day" type="text" inputmode="numeric">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-submitted-from-month">
+		            Month
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-submitted-from-month" name="date-submitted-from-month" type="text" inputmode="numeric">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-submitted-from-year">
+		            Year
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-submitted-from-year" name="date-submitted-from-year" type="text" inputmode="numeric">
+		        </div>
+		      </div>
+		    </div>
+        <div class="govuk-date-input" id="date">
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-submitted-from-day">
+		            Day
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-submitted-to-day" name="date-submitted-to-day" type="text" inputmode="numeric">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-submitted-to-month">
+		            Month
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-submitted-to-month" name="date-submitted-to-month" type="text" inputmode="numeric">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-submitted-to-year">
+		            Year
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-submitted-to-year" name="date-submitted-to-year" type="text" inputmode="numeric">
+		        </div>
+		      </div>
+		    </div>
+
+
+      </div>
+
+
+			<div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="keywords">
+          Prisoner name
+        </label>
+        <input class="govuk-input" id="keywords" name="keywords" type="text">
+      </div>
+
+			<button type="submit" class="govuk-button govuk-!-margin-top-5" data-module="govuk-button" data-test-id="submit-button">
+				Apply filters
+			</button>
+
+
+    </div>
+
+  </div>
+
+</div>

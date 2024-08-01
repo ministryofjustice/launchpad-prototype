@@ -1,10 +1,8 @@
 {% extends "layouts/main.html" %}
 
 {% set pageName="Managing App Requests" %}
-
-
 {% block header %}
-{% set page = '/' %}
+{% set homeurl="/" %}
 
 {{ govukHeader({
   homepageUrl: "/",
@@ -47,7 +45,7 @@
         </tr>
       </thead>
       <tbody class="govuk-table__body">
-        {% include "./table-rows/example.html" %}
+        {% include "./table-rows/v1.html" %}
       </tbody>
     </table>
 

@@ -16,14 +16,14 @@
     position: relative;
     top: -2px;
     fill: govuk-colour('white');
-    padding: 15px 0;
+    padding: 20px 0;
   }
 
   &__title {
     display: flex;
     &__organisation-name {
       @include govuk-responsive-margin(2, 'right');
-      @include govuk-font($size: 24, $weight: 'bold');
+      @include govuk-font($size: 24, $weight: 'normal');
       display: flex;
       align-items: center;
     }
@@ -51,7 +51,7 @@
     &:active {
       color: govuk-colour('white');
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 400;
     }
 
     &:focus {
