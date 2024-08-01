@@ -19,7 +19,13 @@ Example usage:
 let requests                 = require('./pip/requests.json')
 let menus                    = require('./pip/requests-menu.json')
 
+let apps                     = require('./dps/app_types.json')
+let wings                    = require('./dps/wings.json')
+
+
 module.exports = {
   requests,
-  menus
+  menus,
+  apps,
+  wings
 }

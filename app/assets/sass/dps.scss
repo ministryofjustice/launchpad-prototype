@@ -22,6 +22,45 @@
   }
 }
 
+.dps-landing-page-header__container__wrapper {
+  background: rgb(38, 49, 53);
+    .dps-landing-page-header__container{
+      padding: 25px 0;
+      .dps-landing-page-header__text {
+        * { color: white;}
+      }
+    }
+}
+
+.dps-landing-page-content__container__wrapper  {
+  .dps-landing-page-content__container {
+    padding: 25px 0;
+  }
+}
+
+.dps-landing-page__list-menu {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   display: flex;
+   flex-wrap: wrap;
+   font-size: 19px;
+   width: 100%;
+    .dps-landing-page__list-menu-item {
+      flex-basis: calc(50% - 10px);
+      box-sizing: border-box;
+      padding: 15px 0;
+      border-top: 1px solid #b1b4b6;
+      span.list-menu-item-notification {
+        font-weight: normal;
+        border-radius: 20px;
+        margin-right:5px;
+      }
+    &:nth-child(odd) {margin-right: 10px;}
+    &:nth-child(even) {margin-left: 10px;}
+    }
+}
+
 body.dps > .govuk-width-container {
   max-width: none;
 }
@@ -32,14 +71,20 @@ body.dps > .govuk-width-container {
   .name-prisoner-number {
     width: 25em;
   }
-  .govuk-form-group-inline {
+  .govuk-form-group--inline {
     display: flex;
     flex-wrap: wrap;
     gap: 15px 30px;
     align-items: end;
+    & > div, .govuk-button {
+      margin-bottom: 0;
+    }
   }
 }
 
 .card_dps {
   padding: 20px;
+  & > a {
+        text-decoration: none;
+  }
 }

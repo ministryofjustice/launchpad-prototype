@@ -1,9 +1,9 @@
-{% extends "layouts/launchpad.html" %}
+{% extends "layouts/dps.html" %}
 
 {% set pageName="Access my stored property" %}
 {% set version="v1" %}
-{% set bodyClasses = 'dps lp-transormation' %}
-{% set homeurl="/accelerator/staff/v1/" %}
+{% set bodyClasses = 'dps staff-v1' %}
+{% set homeurl="/managing-app-requests/staff/v1/" %}
 
 
 {% block content %}
@@ -14,22 +14,22 @@
     <div class="govuk-width-container">
 
       <nav aria-label="breadcrumb">
-        <div class="govuk-breadcrumbs">
-          <ol class="govuk-breadcrumbs__list">
+  			<div class="govuk-breadcrumbs">
+  				<ol class="govuk-breadcrumbs__list">
+  					<li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}">Digital Prisons Services</a>
+  					</li>
+  					<li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}/applications/">Applications</a>
+  					</li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="../../">Home</a>
-            </li>
-            <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="../">Requests</a>
-            </li>
-						<li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="../">Reception</a>
-            </li>
-          </ol>
-        </div>
-      </nav>
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}/applications/business-hub/">Business Hub</a>
+  					</li>
+  				</ol>
+  			</div>
+  		</nav>
 
-      <span class="govuk-caption-xl">Reception requests</span>
+      <span class="govuk-caption-xl">Reception applications</span>
       <h1 class="govuk-heading-xl">
         {{pageName}}
       </h1>
@@ -96,7 +96,7 @@
             Date sent
           </dt>
           <dd class="govuk-summary-list__value">
-            13 March 2024
+            {{ -1 | getDate }}
           </dd>
         </div>
       </dl>
