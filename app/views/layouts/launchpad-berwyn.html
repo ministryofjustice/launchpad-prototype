@@ -1,0 +1,40 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% set bodyClasses = 'launchpad-home berwyn' %}
+
+{% block header %}
+  {% include "./includes/launchpad/header-berwyn.html" %}
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <h2 class="govuk-visually-hidden">Support links</h2>
+        <ul class="govuk-footer__inline-list">
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="https://thestudio.content-hub.prisoner.service.justice.gov.uk/content/4856" target="_blank">
+              Privacy policy
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+  {% include "govuk-prototype-kit/includes/scripts.njk" %}
+  {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+{% endblock %}

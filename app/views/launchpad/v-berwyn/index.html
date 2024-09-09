@@ -1,12 +1,11 @@
-{% extends "layouts/launchpad.html" %}
-
+{% extends "layouts/launchpad-berwyn.html" %}
 {% set pageName="Home" %}
-{% set version="v1.3" %}
+{% set version="v-berwyn" %}
 
 {% block content %}
 
   <section class="govuk-grid-row govuk-width-container">
-    <time class="govuk-heading-l today-date">{{ 0 | getDate }}</time>
+    <time class="govuk-heading-l govuk-!-margin-top-0 today-date">{{ 0 | getDate }}</time>
   </section>
 
   <div class="container-background-black tiles-panel" data-test="tiles-panel">
@@ -42,17 +41,6 @@
                   <footer class="govuk-!-padding-4 govuk-grid-column-full">
                       <h3 class="govuk-heading-m">NPR</h3>
                       <p class="govuk-body">Listen to 24/7 music, talk, requests and playbacks.</p>
-                  </footer>
-              </a>
-          </div>
-          <div class="link-tile">
-              <a href="https://insidetime.org/" target="_blank">
-                  <img src="/public/images/home/InsideTime.jpg"
-                      alt="link tile image"
-                      loading="lazy" />
-                  <footer class="govuk-!-padding-4 govuk-grid-column-full">
-                      <h3 class="govuk-heading-m">Inside Time</h3>
-                      <p class="govuk-body">Read the national newspaper for prisoners and detainees.</p>
                   </footer>
               </a>
           </div>

@@ -1,6 +1,7 @@
 {% extends "layouts/launchpad-home.html" %}
 {% set pageName="View details of 1310574" %}
 {% set bodyClasses = 'adjudications' %}
+{% set version="v1" %}
 {% set homeurl="/launchpad/v1/" %}
 
 {% block content %}
@@ -16,10 +17,10 @@
             <a class="govuk-breadcrumbs__link" href="{{homeurl}}">Home</a>
           </li>
           <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="{{homeurl}}/profile/">John's profile</a>
+            <a class="govuk-breadcrumbs__link" href="{{homeurl}}profile/">John's profile</a>
           </li>
           <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="{{homeurl}}/adjudications">Adjudications</a>
+            <a class="govuk-breadcrumbs__link" href="{{homeurl}}profile/adjudications/">Adjudications</a>
           </li>
         </ol>
       </div>
