@@ -1,0 +1,140 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="New PIN phone contact" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps staff-v1' %}
+{% set homeurl="/managing-app-requests/staff/v1-1/" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+
+      <nav aria-label="breadcrumb">
+  			<div class="govuk-breadcrumbs">
+  				<ol class="govuk-breadcrumbs__list">
+  					<li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}">Digital Prisons Services</a>
+  					</li>
+  					<li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}/applications/">Applications</a>
+  					</li>
+            <li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}/applications/business-hub/">Business Hub</a>
+  					</li>
+  				</ol>
+  			</div>
+  		</nav>
+
+      <span class="govuk-caption-xl">Business Hub applications</span>
+      <h1 class="govuk-heading-xl">
+        {{pageName}}
+      </h1>
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row govuk-width-container govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full govuk-!-padding-right-9 govuk-!-padding-left-0">
+
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./index.html">Application</a>
+          </li>
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./comments.html">
+              Comments
+              <span id="notifications" class="moj-notification-badge">1</span>
+            </a>
+          </li>
+
+          {% if data['actionRespond'] == "approved" or data['actionRespond'] == "declined"  %}
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="./action-decision.html">Action and reply</a>
+          </li>
+          {% else %}
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="./action.html">Action and reply</a>
+          </li>
+          {% endif %}
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./history.html">History</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h2 class="govuk-heading-m">Action and reply</h2>
+
+          <div id="response-form" class="response-toggle form">
+            <form class="form" method="post">
+              {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+              {{ govukRadios({
+                idPrefix: "actionRespond",
+                name: "actionRespond",
+                fieldset: {
+                  legend: {
+                    text: "Select an action",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+                  {
+                    value: "approved",
+                    text: "Approved",
+                    checked: checked("actionRespond", "approved")
+                  },
+                  {
+                    value: "declined",
+                    text: "Declined",
+                    checked: checked("actionRespond", "declined")
+                  }
+                ]
+              }) }}
+
+              {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+              {{ govukTextarea({
+                name: "decisionReason",
+                id: "decisionReason",
+                label: {
+                  text: "Reason",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                value: data['decisionReason']
+              }) }}
+
+
+              <div class="moj-button-action">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Save action
+                </button>
+              </div>
+            </form>
+          </div>
+
+    </div>
+  </div>
+
+      </div>
+
+    </div>
+
+
+  </div> <!-- end main content  -->
+
+
+
+{% endblock %}

@@ -8,7 +8,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
-require('./routes/v1.js')(router);
+require('./routes/managing-apps-1.js')(router);
 
 
 //require('./views/'+version+'/routes/mainrouter.js')(router);

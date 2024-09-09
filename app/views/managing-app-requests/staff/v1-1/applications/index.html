@@ -1,0 +1,66 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps staff-v1' %}
+{% set homeurl="/managing-app-requests/staff/v1-1/" %}
+
+
+{% block content %}
+
+<div class="dps-landing-page-header__container__wrapper">
+  <div class="govuk-width-container">
+    <div class="dps-landing-page-header__container">
+      <div class="dps-landing-page-header__text">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">Applications</h1>
+            <p class="govuk-body-l">Lorem ipsum dolor sit amet consectetur. Diam vestibulum ornare mollis sed sociis vestibulum placerat elementum in.</p>
+            <p class="govuk-body">Give us your <a href="">feedback</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dps-landing-page-content__container__wrapper">
+  <div class="govuk-width-container">
+    <div class="dps-landing-page-content__container">
+      <div class="dps-landing-page-content__list">
+        <h2 class="govuk-heading-m">Departments</h2>
+
+        <ul class="dps-landing-page__list-menu">
+            <li class="dps-landing-page__list-menu-item">
+              <span class="govuk-tag govuk-tag--red list-menu-item-notification">44</span> <a href="#">Activities</a>
+            </li>
+            <li class="dps-landing-page__list-menu-item">
+              <span class="govuk-tag govuk-tag--red list-menu-item-notification">21</span> <a href="./business-hub/">Business Hub</a>
+            </li>
+            <li class="dps-landing-page__list-menu-item">
+              <span class="govuk-tag govuk-tag--red list-menu-item-notification">4</span> <a href="#">Chaplaincy</a>
+            </li>
+            <li class="dps-landing-page__list-menu-item">
+              <span class="govuk-tag govuk-tag--red list-menu-item-notification">18</span> <a href="#">Educaton</a>
+            </li>
+            <li class="dps-landing-page__list-menu-item">
+              <span class="govuk-tag govuk-tag--red list-menu-item-notification">42</span> <a href="#">Finance</a>
+            </li>
+            <li class="dps-landing-page__list-menu-item">
+              <span class="govuk-tag govuk-tag--red list-menu-item-notification">15</span> <a href="#">Healthcare</a>
+            </li>
+            <li class="dps-landing-page__list-menu-item">
+              <span class="govuk-tag govuk-tag--red list-menu-item-notification">22</span> <a href="#">OMU</a>
+            </li>
+            <li class="dps-landing-page__list-menu-item">
+              <span class="govuk-tag govuk-tag--red list-menu-item-notification">15</span> <a href="#">Safer Custody</a>
+            </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

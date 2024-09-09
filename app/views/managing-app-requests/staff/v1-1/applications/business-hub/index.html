@@ -1,0 +1,85 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Business Hub" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps staff-v1' %}
+{% set homeurl="/managing-app-requests/staff/v1-1/" %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+	<nav aria-label="breadcrumb">
+		<div class="govuk-breadcrumbs">
+			<ol class="govuk-breadcrumbs__list">
+				<li class="govuk-breadcrumbs__list-item">
+					<a class="govuk-breadcrumbs__link" href="{{homeurl}}">Digital Prisons Services</a>
+				</li>
+				<li class="govuk-breadcrumbs__list-item">
+					<a class="govuk-breadcrumbs__link" href="{{homeurl}}/applications/">Applications</a>
+				</li>
+			</ol>
+		</div>
+	</nav>
+
+	<span class="govuk-caption-xl">Applications</span>
+	<h1 class="govuk-heading-xl">
+		{{pageName}}
+	</h1>
+</div>
+
+<div class="govuk-width-container">
+
+	{% if data['newApp'] == "true" %}
+	<div id="applicationsSuccess" class="moj-banner moj-banner--success" role="region" aria-label="Success">
+	  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+	    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+	  </svg>
+	  <div class="moj-banner__message">Application added.</div>
+	</div>
+	{% endif %}
+
+
+	<div class="govuk-grid-row apps-header-search">
+		<div class="govuk-grid-column-two-thirds">
+
+			<div class="govuk-form-group">
+				<h1 class="govuk-label-wrapper">
+					<label class="govuk-label govuk-label--s" for="event-name">
+						Search by prisoner name or number
+					</label>
+				</h1>
+				<input class="govuk-input govuk-!-margin-bottom-0" id="event-name" name="eventName" type="text">
+			</div>
+
+		</div>
+		<div class="govuk-grid-column-one-third">
+			<a href="{{homeurl}}/applications/business-hub/log/select-app-type.html" class="govuk-button" data-module="govuk-button">
+				Log an application
+			</a>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="dps-content">
+	<div class="govuk-width-container">
+
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-one-third">
+				{% include "./includes/filters.html" %}
+			</div>
+
+			<div class="govuk-grid-column-two-thirds">
+
+				{% include "./includes/apps.html" %}
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

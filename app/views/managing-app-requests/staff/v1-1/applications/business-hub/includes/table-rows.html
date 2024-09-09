@@ -1,0 +1,41 @@
+<tr class="govuk-table__row">
+	<td class="govuk-table__cell govuk-table__cell-checkboxes">
+		<div class="govuk-checkboxes__item">
+			<input class="govuk-checkboxes__input" id="select-{{ app.app_id }}" name="businesshub_app" type="checkbox" value="">
+			<label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+				<span class="govuk-visually-hidden">Select</span>
+			</label>
+		</div>
+	</td>
+	<td class="govuk-table__cell reldate">0</td>
+	<td class="govuk-table__cell">{{ data['appType'] }}</td>
+	<td class="govuk-table__cell">
+		Patel, Taj
+		<span class="govuk-table__subtext govuk-body-s">{{ data['prisonNumber'] }}</span>
+	</td>
+	<td class="govuk-table__cell">Pending</td>
+	<td class="govuk-table__cell"><a href="./apps/app-1/">View</a></td>
+</tr>
+
+
+
+{% for app in data['bhApps'] %}
+<tr class="govuk-table__row">
+	<td class="govuk-table__cell govuk-table__cell-checkboxes">
+		<div class="govuk-checkboxes__item">
+			<input class="govuk-checkboxes__input" id="select-{{ app.app_id }}" name="businesshub_app" type="checkbox" value="{{ app.app_id }}">
+			<label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+				<span class="govuk-visually-hidden">Select {{ app.app_type }} {{ app.prisoner_name }}</span>
+			</label>
+		</div>
+	</td>
+	<td class="govuk-table__cell reldate">{{ app.date_received }}</td>
+	<td class="govuk-table__cell">{{ app.app_type }}</td>
+	<td class="govuk-table__cell">
+		{{ app.prisoner_name }}
+		<span class="govuk-table__subtext govuk-body-s">{{ app.prisoner_number }}</span>
+	</td>
+	<td class="govuk-table__cell">{{ app.status }}</td>
+	<td class="govuk-table__cell"><a href="./apps/app-1/">View</a></td>
+</tr>
+{% endfor %}

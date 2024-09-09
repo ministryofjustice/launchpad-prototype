@@ -1,0 +1,62 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+//
+
+// List of apps
+
+.moj-filter {
+  .govuk-checkboxes--small .govuk-checkboxes__label {
+    max-width: none !important; //this could be removed once you remove the content hub styles
+  }
+}
+
+table {
+  th.govuk-table__cell-checkboxes {
+  }
+  .govuk-checkboxes__item {
+    padding-left: 0px !important;
+  .govuk-checkboxes__input {
+    left: 0px;
+    margin-left: 0px;
+    width: 24px;
+    height: 24px;
+  }
+  .govuk-checkboxes__label {
+    &:before {
+    top: 0px !important;
+  }
+}
+}
+}
+
+.govuk-table__subtext {
+  display: block;
+  margin-bottom: 0;
+  color: #505a5f;
+}
+
+.app-message {
+  padding: 15px 0;
+  border-top: 1px solid 	#b1b4b6;
+  &:last-of-type {
+    border-bottom: 1px solid 	#b1b4b6;
+  }
+  .app-messages-metadata {
+    color: #505a5f;
+  }
+}
+
+
+.moj-add-another__remove-button {
+  top: 1.5em;
+}
+
+.autocomplete__wrapper {
+  max-width: 85%;
+}
+
+.apps-header-search {
+  a.govuk-button { float: right; margin-bottom: 0; margin-top: 1.5em;}
+  input {margin-bottom: 1.5em;}
+}
