@@ -21,11 +21,13 @@ let menus                    = require('./pip/requests-menu.json')
 
 let apps                     = require('./dps/app_types.json')
 let wings                    = require('./dps/wings.json')
+let bhApps                   = require('./dps/business_hub_apps.json')
 
 
 module.exports = {
   requests,
   menus,
   apps,
-  wings
+  wings,
+  bhApps
 }

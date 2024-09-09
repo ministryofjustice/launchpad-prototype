@@ -1,0 +1,126 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Forward this application " %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps staff-v1' %}
+{% set homeurl="/managing-app-requests/staff/v1-1/" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+
+    <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <form class="form" action="{{homeurl}}/applications/business-hub/apps/app-1/">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changedDept-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">
+              {% if data['appType'] %}
+                {{ data['appType'] }}
+              {% else %}
+                New PIN phone contact
+              {% endif %}
+            </span>
+            <h1 class="govuk-fieldset__heading">
+              {{pageName}}
+            </h1>
+          </legend>
+          <div id="changedDept-hint" class="govuk-hint">
+            Send this application to:
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="appDept" name="appDept" type="radio" value="Activities">
+              <label class="govuk-label govuk-radios__label" for="appDept">
+                Activities
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="appDept-2" name="appDept" type="radio" value="Chaplaincy">
+              <label class="govuk-label govuk-radios__label" for="appDept-2">
+                Chaplaincy
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="appDept-3" name="appDept" type="radio" value="Education">
+              <label class="govuk-label govuk-radios__label" for="appDept-3">
+                Education
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="appDept-4" name="appDept" type="radio" value="Finance">
+              <label class="govuk-label govuk-radios__label" for="appDept-4">
+                Finance
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="appDept-4" name="appDept" type="radio" value="Healthcare">
+              <label class="govuk-label govuk-radios__label" for="appDept-5">
+                Healthcare
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="appDept-4" name="appDept" type="radio" value="OMU">
+              <label class="govuk-label govuk-radios__label" for="appDept-6">
+                OMU
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="appDept-4" name="appDept" type="radio" value="Safer Custody">
+              <label class="govuk-label govuk-radios__label" for="appDept-7">
+                Safer Custody
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="more-detail">
+          Reason for forwarding this application
+        </label>
+        <div id="more-detail-hint" class="govuk-hint">
+          This is added to the app comments for other staff to see.
+        </div>
+        <textarea class="govuk-textarea" id="forwardReasons" name="forwardReasons" rows="5"></textarea>
+      </div>
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend moj-add-another__title govuk-fieldset__legend--s"">Notify staff about this comment (optional)</legend>
+
+        <div class="govuk-form-group moj-add-another__item">
+          <label for="my-autocomplete" class="govuk-label">Name</label>
+          <div id="my-autocomplete-container"></div>
+        </div>
+      </fieldset>
+
+        <div class="moj-button-action  govuk-!-margin-top-5">
+          <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+            Add another member of staff
+          </button>
+        </div>
+
+      <div class="moj-button-action">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save department
+        </button>
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+</div>
+
+  </div> <!-- end main content  -->
+
+
+
+{% endblock %}

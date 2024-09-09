@@ -1,26 +1,31 @@
 [
   {
     "dept": "Business Hub",
+    "appid": "bh_01",
     "type": "PIN Phone Credit",
     "amount": 32
   },
   {
     "dept": "Business Hub",
+    "appid": "bh_02",
     "type": "Catalogue order",
     "amount": 12
   },
   {
     "dept": "Business Hub",
+    "appid": "bh_03",
     "type": "Move money",
     "amount": 21
   },
   {
     "dept": "Business Hub",
+    "appid": "bh_04",
     "type": "Send money to someone",
     "amount": 8
   },
   {
     "dept": "Business Hub",
+    "appid": "bh_05",
     "type": "Balance enquiry",
     "amount": 34
   }

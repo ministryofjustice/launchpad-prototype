@@ -1,0 +1,160 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="New PIN phone contact" %}
+{% set version="v1" %}
+{% set bodyClasses = 'dps staff-v1' %}
+{% set homeurl="/managing-app-requests/staff/v1-1/" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+
+      <nav aria-label="breadcrumb">
+  			<div class="govuk-breadcrumbs">
+  				<ol class="govuk-breadcrumbs__list">
+  					<li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}">Digital Prisons Services</a>
+  					</li>
+  					<li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}/applications/">Applications</a>
+  					</li>
+            <li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}/applications/business-hub/">Business Hub</a>
+  					</li>
+  				</ol>
+  			</div>
+  		</nav>
+
+      <span class="govuk-caption-xl">Business Hub applications</span>
+      <h1 class="govuk-heading-xl">
+        {{pageName}}
+      </h1>
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row govuk-width-container govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full govuk-!-padding-right-9 govuk-!-padding-left-0">
+
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./index.html">Application</a>
+          </li>
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page"  href="./comments.html">
+              Comments
+              <span id="notifications" class="moj-notification-badge">1</span>
+            </a>
+          </li>
+
+          {% if data['actionRespond'] == "approved" or data['actionRespond'] == "declined"  %}
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./action-decision.html">Action and reply</a>
+          </li>
+          {% else %}
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./action.html">Action and reply</a>
+          </li>
+          {% endif %}
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./history.html">History</a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <h2 class="govuk-heading-m">Comments about this app</h2>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          {% if data['newComment'] %}
+
+          <div class="app-message govuk-body">
+            <div class="app-messages-metadata">
+              J. Smith | {{ 0 | getDate }} at 16:52
+            </div>
+            <div class="app-messages-content">
+              {{ data['newComment'] }}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if data['forwardReasons'] %}
+
+          <div class="app-message govuk-body">
+            <div class="app-messages-metadata">
+              J. Smith | {{ 0 | getDate }} at 16:52
+            </div>
+            <div class="app-messages-content">
+              <p>Application forwarded</p>
+              {{ data['forwardReasons'] }}
+            </div>
+          </div>
+          {% endif %}
+
+      <div class="app-message govuk-body">
+        <div class="app-messages-metadata">
+          J. Smith | {{ 0 | getDate }} at 16:52
+        </div>
+        <div class="app-messages-content">
+          Taj has had a family bereavement so it’s urgent that this is approved if passes security.
+        </div>
+      </div>
+
+
+      <div data-module="moj-add-another">
+
+      <form class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="more-detail">
+            Add a comment
+          </label>
+          <textarea class="govuk-textarea" id="newComment" name="newComment" rows="5"></textarea>
+        </div>
+
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend moj-add-another__title govuk-fieldset__legend--s"">Notify staff about this comment (optional)</legend>
+
+          <div class="govuk-form-group moj-add-another__item">
+            <label for="my-autocomplete" class="govuk-label">Name</label>
+            <div id="my-autocomplete-container"></div>
+          </div>
+        </fieldset>
+
+          <div class="moj-button-action  govuk-!-margin-top-5">
+            <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+              Add another person
+            </button>
+          </div>
+
+          <div class="moj-button-action  govuk-!-margin-top-9">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Save message
+            </button>
+          </div>
+
+
+      </form>
+      </div>
+      </div>
+      </div>
+
+      </div>
+
+    </div>
+
+
+  </div> <!-- end main content  -->
+
+
+
+{% endblock %}

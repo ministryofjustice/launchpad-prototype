@@ -35,8 +35,13 @@ $govuk-page-width: $moj-page-width;
 @import "timetable.scss";
 
 // DPS styles
-@import "dps.scss";
-@import "dps-header-bar.scss";
+@import "./dps/dps.scss";
+@import "./dps/dps-header-bar.scss";
+
+// Managing Apps
+@import "./dps/managing-apps.scss";
+@import "./dps/accessible-autocomplete.scss";
+
 
 // Accelerator
 @import "accellerator.scss";
