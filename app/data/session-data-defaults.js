@@ -22,6 +22,7 @@ let menus                    = require('./pip/requests-menu.json')
 let apps                     = require('./dps/app_types.json')
 let wings                    = require('./dps/wings.json')
 let bhApps                   = require('./dps/business_hub_apps.json')
+let pinApps                  = require('./dps/pin_apps.json')
 
 
 module.exports = {
@@ -29,5 +30,6 @@ module.exports = {
   menus,
   apps,
   wings,
-  bhApps
+  bhApps,
+  pinApps
 }

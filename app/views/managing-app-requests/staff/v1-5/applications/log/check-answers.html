@@ -1,0 +1,287 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Check details" %}
+{% set version="v1-5" %}
+{% set bodyClasses = 'dps staff-v1' %}
+{% set homeurl="/managing-app-requests/staff/v1-5/" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+
+    <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <span class="govuk-caption-xl">
+        {% if data['appType'] == "bh_01" %}
+          Top up PIN phone credit
+        {% elseif data['appType'] == "bh_02" %}
+          Add emergency PIN phone credit
+        {% elseif data['appType'] == "bh_03" %}
+          Add new PIN phone contact
+        {% elseif data['appType'] == "bh_04" %}
+          Remove PIN phone contact
+        {% elseif data['appType'] == "bh_05" %}
+          Swap visiting orders (VOs) for PIN credit
+        {% endif %}
+        </span>
+
+        <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+        <div class="govuk-summary-list--header">
+          <h2 class="govuk-heading-m">Application type</h2>
+          <a href="/managing-app-requests/staff/v1-5/applications/log/select-app-type.html" class="govuk-body">Change <span class="govuk-visually-hidden"> application type</span></a>
+        </div>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Application type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['appType'] == "bh_01" %}
+                Top up PIN phone credit
+              {% elseif data['appType'] == "bh_02" %}
+                Add emergency PIN phone credit
+              {% elseif data['appType'] == "bh_03" %}
+                Add new PIN phone contact
+              {% elseif data['appType'] == "bh_04" %}
+                Remove PIN phone contact
+              {% elseif data['appType'] == "bh_05" %}
+                Swap visiting orders (VOs) for PIN credit
+              {% endif %}
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-summary-list--header">
+          <h2 class="govuk-heading-m">Prisoner details</h2>
+          <a href="" class="govuk-body">Change <span class="govuk-visually-hidden"> prisoner details</span></a>
+        </div>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Prisoner name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Patel, Taj ({{ data['prisonNumber'] }})
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Submitted on
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['submittedDate'] }}
+            </dd>
+          </div>
+        </dl>
+
+        {% if data['appType'] == "bh_01" %}
+        <div class="govuk-summary-list--header">
+          <h2 class="govuk-heading-m">PIN phone credit</h2>
+          <a href="/managing-app-requests/staff/v1-5/applications/log/topup-pin-credit.html" class="govuk-body">Change <span class="govuk-visually-hidden"> PIN phone credit</span></a>
+        </div>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Amount
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £{{ data['pinCredit'] }}
+            </dd>
+          </div>
+        </dl>
+
+        {% endif %}
+
+        {% if data['appType'] == "bh_02" %}
+        <div class="govuk-summary-list--header">
+          <h2 class="govuk-heading-m">PIN phone credit</h2>
+          <a href="" class="govuk-body">Change <span class="govuk-visually-hidden">PIN phone credit</span></a>
+        </div>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Amount
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £{{ data['pinCredit'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reason
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['emergencyPInReason'] }}
+            </dd>
+          </div>
+        </dl>
+
+        {% endif %}
+
+        {% if data['appType'] == "bh_03" %}
+        <div class="govuk-summary-list--header">
+          <h2 class="govuk-heading-m">Emergency PIN phone credit</h2>
+          <a href="" class="govuk-body">Change <span class="govuk-visually-hidden">PIN phone credit</span></a>
+        </div>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['contactName'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Company
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['companyName'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address line 1
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['contactAddress1'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address line 2
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['contactAddress2'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Town or city
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['contactTowncity'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Postcode
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['contactPostcode'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Telephone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['contactTel'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Relation to prisoner
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['contactRelationship'] }}
+            </dd>
+          </div>
+
+        </dl>
+
+
+        {% endif %}
+
+        {% if data['appType'] == "bh_04" %}
+        <div class="govuk-summary-list--header">
+          <h2 class="govuk-heading-m">Contact's details</h2>
+          <a href="" class="govuk-body">Change <span class="govuk-visually-hidden"> contact's details</span></a>
+        </div>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['contactName'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Telephone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['contactTel'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Relation to prisoner
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['contactRelationship'] }}
+            </dd>
+          </div>
+
+        </dl>
+
+
+        {% endif %}
+
+        {% if data['appType'] == "bh_05" %}
+        <div class="govuk-summary-list--header">
+          <h2 class="govuk-heading-m">Visiting orders</h2>
+          <a href="" class="govuk-body">Change <span class="govuk-visually-hidden"> Visiting orders</span></a>
+        </div>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Month
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['voMonth'] }}
+            </dd>
+          </div>
+        </dl>
+
+        {% endif %}
+
+
+
+        <div class="moj-button-action">
+          <a href="./confirmation.html" class="govuk-button" data-module="govuk-button">
+            Save application
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  </div> <!-- end main content  -->
+
+
+
+{% endblock %}

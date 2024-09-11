@@ -38,7 +38,9 @@ table {
 
 .app-message {
   padding: 15px 0;
-  border-top: 1px solid 	#b1b4b6;
+  border-top: 1px solid	#b1b4b6;
+  border-bottom: 1px solid 	#b1b4b6;
+  margin-bottom: -1px;
   &:last-of-type {
     border-bottom: 1px solid 	#b1b4b6;
   }
@@ -59,4 +61,10 @@ table {
 .apps-header-search {
   a.govuk-button { float: right; margin-bottom: 0; margin-top: 1.5em;}
   input {margin-bottom: 1.5em;}
+}
+
+.govuk-summary-list--header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #b1b4b6;
 }
