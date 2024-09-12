@@ -10,6 +10,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 require('./routes/managing-apps-1.js')(router);
 
+require('./routes/managing-apps-1-5.js')(router);
 
 //require('./views/'+version+'/routes/mainrouter.js')(router);
 module.exports = router;

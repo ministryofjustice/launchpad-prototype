@@ -1,0 +1,140 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Add new PIN phone contact" %}
+{% set version="v1-5" %}
+{% set bodyClasses = 'dps staff-v1' %}
+{% set homeurl="/managing-app-requests/staff/v1-5/" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+
+      <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+      <span class="govuk-caption-xl">{{pageName}}</span>
+      <h1 class="govuk-heading-xl">Add application details</h1>
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+
+
+            <form class="form" action="{{homeurl}}applications/log/check-answers">
+
+
+            <div class="govuk-form-group govuk-!-margin-bottom-0">
+              <label class="govuk-label govuk-label--s" for="prisonNumber">
+                Prison number
+              </label>
+              <input class="govuk-input govuk-input--width-10" id="prisonNumber" name="prisonNumber" type="text">
+              <a href="#" id="prisonNumber-lookup" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Find prisoner
+              </a>
+            </div>
+
+            <div id="prisoner-name-row" class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="prisonerName">
+                Prisoner name
+              </label>
+              <input class="govuk-input" id="prisonerName" name="prisonerName" type="text" value="Taj Patel" disabled>
+            </div>
+
+
+
+            {%- from "moj/components/date-picker/macro.njk" import mojDatePicker -%}
+
+              {{ mojDatePicker({
+              id: "submittedDate",
+              name: "submittedDate",
+              label: {
+                  text: "Submitted on",
+                  classes: "govuk-label--s"
+              },
+              classes: "govuk-!-margin-bottom-5"
+            }) }}
+
+            <h2 class="govuk-heading-m">New PIN phone contact</h2>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5">
+              <label class="govuk-label govuk-label--s" for="event-name">
+                Full name
+              </label>
+              <input class="govuk-input" id="contactName" name="contactName" type="text">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5">
+              <label class="govuk-label govuk-label--s" for="event-name">
+                Company
+              </label>
+              <input class="govuk-input" id="companyName" name="companyName" type="text">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5">
+              <label class="govuk-label govuk-label--s" for="contactAddress1">
+                Address line 1
+              </label>
+              <input class="govuk-input" id="contactAddress1" name="contactAddress1" type="text">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5">
+              <label class="govuk-label govuk-label--s" for="contactAddress2">
+                Address line 2
+              </label>
+              <input class="govuk-input" id="contactAddress2" name="contactAddress2" type="text">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5">
+              <label class="govuk-label govuk-label--s" for="contactTowncity">
+                Town or city
+              </label>
+              <input class="govuk-input" id="contactTowncity" name="contactTowncity" type="text">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5">
+              <label class="govuk-label govuk-label--s" for="contactPostcode">
+                Postcode
+              </label>
+              <input class="govuk-input govuk-input--width-10" id="contactPostcode" name="contactPostcode" type="text">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5">
+              <label class="govuk-label govuk-label--s" for="contactTel">
+                Telephone number
+              </label>
+              <div id="contactTel-hint" class="govuk-hint">
+                Including area code
+              </div>
+              <input class="govuk-input" id="contactTel" name="contactTel" type="text">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5">
+              <label class="govuk-label govuk-label--s" for="contactRelationship">
+                Relationship to prisoner
+              </label>
+              <input class="govuk-input" id="contactRelationship" name="contactRelationship" type="text">
+            </div>
+
+            <div class="moj-button-action">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+            </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- end main content  -->
+
+
+
+{% endblock %}

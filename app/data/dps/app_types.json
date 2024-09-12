@@ -2,31 +2,31 @@
   {
     "dept": "Business Hub",
     "appid": "bh_01",
-    "type": "PIN Phone Credit",
+    "type": "Top up PIN phone credit",
     "amount": 32
   },
   {
     "dept": "Business Hub",
     "appid": "bh_02",
-    "type": "Catalogue order",
+    "type": "Add emergency PIN phone credit",
     "amount": 12
   },
   {
     "dept": "Business Hub",
     "appid": "bh_03",
-    "type": "Move money",
+    "type": "Add new PIN phone contact",
     "amount": 21
   },
   {
     "dept": "Business Hub",
     "appid": "bh_04",
-    "type": "Send money to someone",
+    "type": "Remove PIN phone contact",
     "amount": 8
   },
   {
     "dept": "Business Hub",
     "appid": "bh_05",
-    "type": "Balance enquiry",
+    "type": "Swap visiting orders (VOs) for PIN credit",
     "amount": 34
   }
 ]

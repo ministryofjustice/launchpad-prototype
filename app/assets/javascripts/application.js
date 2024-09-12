@@ -7,6 +7,15 @@ window.GOVUKPrototypeKit.documentReady(() => {
   // Add JavaScript here
   var DateTime = luxon.DateTime;
 
+  $('#prisoner-name-row').hide();
+
+  $('a#prisonNumber-lookup').click(function () {
+    var prisonNumber =  $('input#prisonNumber').val();
+    console.log(prisonNumber);
+    if (prisonNumber.length > 2) {
+      $('#prisoner-name-row').show();
+    }
+  })
 
 // Convert spreadsheet date formats to reasable dates
   $('td.date').each(function () {
@@ -44,16 +53,6 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
   // Show and hide the Applictions added banner
   $( "#applicationsSuccess" ).delay(5000).fadeOut('slow');
-
-  // Show prisoner name on lookup
-
-  $( "#prisoner-name-row" ).hide();
-
-  $( "#prisonNumber-lookup" ).on( "click", function() {
-    $( "#prisoner-name-row" ).show();
-  } );
-
-
 
 
 
