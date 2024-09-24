@@ -23,10 +23,16 @@
         <fieldset class="govuk-fieldset" aria-describedby="changedDept-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <span class="govuk-caption-xl">
-              {% if data['appType'] %}
-                {{ data['appType'] }}
+              {% if data['appType'] == "bh_02" %}
+                Add emergency PIN phone credit
+              {% elseif data['appType'] == "bh_03" %}
+                Add new PIN phone contact
+              {% elseif data['appType'] == "bh_04" %}
+                Remove PIN phone contact
+              {% elseif data['appType'] == "bh_05" %}
+                Swap visiting orders (VOs) for PIN credit
               {% else %}
-                New PIN phone contact
+                Top up PIN phone credit
               {% endif %}
             </span>
             <h1 class="govuk-fieldset__heading">
@@ -56,14 +62,8 @@
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="appDept-4" name="appDept" type="radio" value="Finance">
-              <label class="govuk-label govuk-radios__label" for="appDept-4">
-                Finance
-              </label>
-            </div>
-            <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="appDept-4" name="appDept" type="radio" value="Healthcare">
-              <label class="govuk-label govuk-radios__label" for="appDept-5">
+              <label class="govuk-label govuk-radios__label" for="appDept-4">
                 Healthcare
               </label>
             </div>
@@ -76,7 +76,13 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="appDept-4" name="appDept" type="radio" value="Safer Custody">
               <label class="govuk-label govuk-radios__label" for="appDept-7">
-                Safer Custody
+                Safer custody
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="appDept-4" name="appDept" type="radio" value="Security">
+              <label class="govuk-label govuk-radios__label" for="appDept-7">
+                Security
               </label>
             </div>
           </div>
@@ -84,27 +90,33 @@
       </div>
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--s" for="more-detail">
-          Reason for forwarding this application
+          Reason for forwarding this application (optional)
         </label>
         <div id="more-detail-hint" class="govuk-hint">
-          This is added to the app comments for other staff to see.
+          This is added to the comments for other staff to see.
         </div>
         <textarea class="govuk-textarea" id="forwardReasons" name="forwardReasons" rows="5"></textarea>
       </div>
+
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend moj-add-another__title govuk-fieldset__legend--s"">Notify staff about this comment (optional)</legend>
 
-        <div class="govuk-form-group moj-add-another__item">
+        <dl id="notify-list" class="govuk-summary-list">
+        </dl>
+
+        <div class="govuk-form-group">
           <label for="my-autocomplete" class="govuk-label">Name</label>
-          <div id="my-autocomplete-container"></div>
+          <div class="notify-group">
+            <div id="my-autocomplete-wrapper">
+              <div id="my-autocomplete-container"></div>
+            </div>
+            <a id="addName" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Add
+            </a>
+          </div>
+
         </div>
       </fieldset>
-
-        <div class="moj-button-action  govuk-!-margin-top-5">
-          <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
-            Add another member of staff
-          </button>
-        </div>
 
       <div class="moj-button-action">
         <button type="submit" class="govuk-button" data-module="govuk-button">

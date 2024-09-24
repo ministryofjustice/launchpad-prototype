@@ -8,10 +8,28 @@
 		</div>
 	</td>
 	<td class="govuk-table__cell reldate">0</td>
-	<td class="govuk-table__cell">{{ data['appType'] }}</td>
+	<td class="govuk-table__cell">
+		{% if data['appType'] == "bh_02" %}
+			Add emergency PIN phone credit
+		{% elseif data['appType'] == "bh_03" %}
+			Add new PIN phone contact
+		{% elseif data['appType'] == "bh_04" %}
+			Remove PIN phone contact
+		{% elseif data['appType'] == "bh_05" %}
+			Swap visiting orders (VOs) for PIN credit
+		{% else %}
+			Top up PIN phone credit
+		{% endif %}
+	</td>
 	<td class="govuk-table__cell">
 		Patel, Taj
-		<span class="govuk-table__subtext govuk-body-s">{{ data['prisonNumber'] }}</span>
+		<span class="govuk-table__subtext govuk-body-s">
+			{% if data['prisonNumber'] %}
+				data['prisonNumber']
+			{% else %}
+				16539153
+			{% endif %}
+		</span>
 	</td>
 	<td class="govuk-table__cell">Pending</td>
 	<td class="govuk-table__cell"><a href="./apps/app-1/">View</a></td>
