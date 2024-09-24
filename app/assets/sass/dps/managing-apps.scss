@@ -22,11 +22,6 @@ table {
     width: 24px;
     height: 24px;
   }
-  .govuk-checkboxes__label {
-    &:before {
-    top: 0px !important;
-  }
-}
 }
 }
 
@@ -49,13 +44,18 @@ table {
   }
 }
 
-
-.moj-add-another__remove-button {
-  top: 1.5em;
-}
-
-.autocomplete__wrapper {
-  max-width: 85%;
+.notify-group {
+  #my-autocomplete-wrapper {
+    float: left;
+    font-family: "GDS Transport", arial, sans-serif;
+    width: 85%;
+    margin-right: 10px;
+  }
+  a.govuk-button {
+    float: right;
+    text-decoration: none;
+  }
+    clear: both;
 }
 
 .apps-header-search {

@@ -12,14 +12,11 @@
 
   <div class="govuk-grid-column-full">
     <div class="govuk-width-container">
-      <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+      <main class="govuk-main-wrapper govuk-!-padding-top-9" id="main-content" role="main">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <div class="govuk-panel govuk-panel--confirmation">
-              <h1 class="govuk-panel__title">
-                Application complete
-              </h1>
-              <div class="govuk-panel__body">
+              <div class="govuk-panel__body govuk-!-padding-bottom-3">
                 {% if data['appType'] == "bh_01" %}
                   Top up PIN phone credit
                 {% elseif data['appType'] == "bh_02" %}
@@ -32,19 +29,21 @@
                   Swap visiting orders (VOs) for PIN credit
                 {% endif %}
               </div>
+              <h1 class="govuk-panel__title">
+                Application submitted
+              </h1>
             </div>
             <p class="govuk-body-l">Business Hub has this application and has been notified by email.</p>
-            <p class="govuk-body">
-              <a href="{{homeurl}}applications/business-hub/apps/app-1/">Go back to the application</a>
-            </p>
-            <a href="{{homeurl}}applications/log/select-app-type.html" class="govuk-button" data-module="govuk-button">
-              Add another application
-            </a>
-            <br>
-            <a href="{{homeurl}}applications/" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-              Return to applications dashboard
-            </a>
-          </div>
+            <p class="govuk-body">You can now:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li><a href="{{homeurl}}applications/business-hub/apps/app-1/">View this application</a></li>
+                <li><a href="{{homeurl}}applications/log/select-app-type.html">Add another application</a></li>
+                <li><a href="{{homeurl}}applications/">Return to applications dashboard</a></li>
+            </ul>
+
+
+            </div>
         </div>
       </main>
     </div></div>

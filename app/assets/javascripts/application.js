@@ -7,17 +7,25 @@ window.GOVUKPrototypeKit.documentReady(() => {
   // Add JavaScript here
   var DateTime = luxon.DateTime;
 
-  $('#prisoner-name-row').hide();
+  // Show prisoner name when entering a prison number
+
+  var prisonNumber =  $('input#prisonNumber').val();
+
+  if (prisonNumber === "") {
+    $('#prisoner-name-row').hide();
+  }
 
   $('a#prisonNumber-lookup').click(function () {
+    // alert('this works');
     var prisonNumber =  $('input#prisonNumber').val();
     console.log(prisonNumber);
+    //alert(prisonNumber);
     if (prisonNumber.length > 2) {
       $('#prisoner-name-row').show();
     }
   })
 
-// Convert spreadsheet date formats to reasable dates
+// Convert spreadsheet date formats to readable dates
   $('td.date').each(function () {
     var due = $(this).html();
     const date = DateTime.fromISO(due)
@@ -31,7 +39,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
   })
 
 
-  // Convert tags to show the right colours
+  // Convert tags after decision to show the right colours
   $('.govuk-tag').each(function () {
     var tagName = $(this).text();
 
@@ -54,6 +62,22 @@ window.GOVUKPrototypeKit.documentReady(() => {
   // Show and hide the Applictions added banner
   $( "#applicationsSuccess" ).delay(5000).fadeOut('slow');
 
+
+  // Add people to the notify list
+  var notifyCount = 0;
+
+  $('a#addName').click(function() {
+      var addNewName = $('input#my-autocomplete').val();
+      if (addNewName !="") {
+        $('dl#notify-list').append('<div class="govuk-summary-list__row"><dd class="govuk-summary-list__value">' + addNewName + '</dd><dd class="govuk-summary-list__actions"><a class="removeName govuk-link">Remove<span class="govuk-visually-hidden"> name</span></a></dd></div>');
+        $('input#my-autocomplete').val("");
+    };
+  });
+
+  $('dl#notify-list').on('click','a.removeName',function() {
+   	$(this).closest('div').remove();
+    e.preventDefault();
+  });
 
 
   $('.sensitive-card').click(function(){

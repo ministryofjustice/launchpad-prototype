@@ -33,10 +33,6 @@
 
         <h1 class="govuk-heading-xl">{{pageName}}</h1>
 
-        <div class="govuk-summary-list--header">
-          <h2 class="govuk-heading-m">Application type</h2>
-          <a href="/managing-app-requests/staff/v1-5/applications/log/select-app-type.html" class="govuk-body">Change <span class="govuk-visually-hidden"> application type</span></a>
-        </div>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -56,11 +52,14 @@
                 Swap visiting orders (VOs) for PIN credit
               {% endif %}
             </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/managing-app-requests/staff/v1-5/applications/log/select-app-type.html" class="govuk-body">Change <span class="govuk-visually-hidden"> application type</span></a>
+            </dd>
           </div>
         </dl>
 
         <div class="govuk-summary-list--header">
-          <h2 class="govuk-heading-m">Prisoner details</h2>
+          <h2 class="govuk-heading-m">Application details</h2>
           <a href="" class="govuk-body">Change <span class="govuk-visually-hidden"> prisoner details</span></a>
         </div>
 
@@ -85,7 +84,7 @@
 
         {% if data['appType'] == "bh_01" %}
         <div class="govuk-summary-list--header">
-          <h2 class="govuk-heading-m">PIN phone credit</h2>
+          <h2 class="govuk-heading-m">Top up PIN phone credit</h2>
           <a href="/managing-app-requests/staff/v1-5/applications/log/topup-pin-credit.html" class="govuk-body">Change <span class="govuk-visually-hidden"> PIN phone credit</span></a>
         </div>
 
@@ -104,7 +103,7 @@
 
         {% if data['appType'] == "bh_02" %}
         <div class="govuk-summary-list--header">
-          <h2 class="govuk-heading-m">PIN phone credit</h2>
+          <h2 class="govuk-heading-m">Add emergency PIN phone credit</h2>
           <a href="" class="govuk-body">Change <span class="govuk-visually-hidden">PIN phone credit</span></a>
         </div>
 
@@ -132,8 +131,8 @@
 
         {% if data['appType'] == "bh_03" %}
         <div class="govuk-summary-list--header">
-          <h2 class="govuk-heading-m">Emergency PIN phone credit</h2>
-          <a href="" class="govuk-body">Change <span class="govuk-visually-hidden">PIN phone credit</span></a>
+          <h2 class="govuk-heading-m">Add new PIN phone contact</h2>
+          <a href="" class="govuk-body">Change <span class="govuk-visually-hidden">PIN phone contact</span></a>
         </div>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -211,7 +210,7 @@
 
         {% if data['appType'] == "bh_04" %}
         <div class="govuk-summary-list--header">
-          <h2 class="govuk-heading-m">Contact's details</h2>
+          <h2 class="govuk-heading-m">Remove PIN phone contact</h2>
           <a href="" class="govuk-body">Change <span class="govuk-visually-hidden"> contact's details</span></a>
         </div>
 
@@ -249,7 +248,7 @@
 
         {% if data['appType'] == "bh_05" %}
         <div class="govuk-summary-list--header">
-          <h2 class="govuk-heading-m">Visiting orders</h2>
+          <h2 class="govuk-heading-m">Swap visiting orders (VOs) for PIN credit</h2>
           <a href="" class="govuk-body">Change <span class="govuk-visually-hidden"> Visiting orders</span></a>
         </div>
 
@@ -270,7 +269,7 @@
 
         <div class="moj-button-action">
           <a href="./confirmation.html" class="govuk-button" data-module="govuk-button">
-            Save application
+            Save
           </a>
         </div>
 
