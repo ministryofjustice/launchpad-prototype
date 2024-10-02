@@ -1,0 +1,223 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Add new PIN phone contact" %}
+{% set version="latest" %}
+{% set bodyClasses = 'dps staff-v1' %}
+{% set homeurl="/managing-app-requests/staff/latest/" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+
+      <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+      <span class="govuk-caption-xl">{{pageName}}</span>
+      <h1 class="govuk-heading-xl">Log details</h1>
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+
+
+            <form class="form" action="{{homeurl}}applications/log/check-answers">
+
+
+              <div class="govuk-form-group govuk-!-margin-bottom-0">
+                <label class="govuk-label govuk-label--s" for="prisonNumber">
+                  Prison number
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="prisonNumber" name="prisonNumber" type="text" value="{{ data['prisonNumber'] }}">
+                <a href="#" id="prisonNumber-lookup" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Find prisoner
+                </a>
+              </div>
+
+              <div id="prisoner-name-row" class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="prisonerName">
+                  Prisoner name
+                </label>
+                <input class="govuk-input" id="prisonerName" name="prisonerName" type="text" value="Taj Patel" disabled>
+              </div>
+
+              {%- from "moj/components/date-picker/macro.njk" import mojDatePicker -%}
+
+                {{ mojDatePicker({
+                id: "submittedDate",
+                name: "submittedDate",
+                label: {
+                    text: "Submitted on",
+                    classes: "govuk-label--s"
+                },
+                value:  data['submittedDate'] ,
+                classes: "govuk-!-margin-bottom-5"
+              }) }}
+
+            <h2 class="govuk-heading-m">New PIN phone contact</h2>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5">
+              <label class="govuk-label govuk-label--s" for="event-name">
+                Full name
+              </label>
+              <input class="govuk-input" id="contactName" name="contactName" type="text" value="{{ data['contactName'] }}">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-9">
+              <label class="govuk-label govuk-label--s" for="event-name">
+                Company
+              </label>
+              <input class="govuk-input" id="companyName" name="companyName" type="text" value="{{ data['companyName'] }}">
+            </div>
+
+            <h2 class="govuk-heading-m">Address</h2>
+
+            <div class="govuk-form-group address-lookup">
+              <label for="my-autocomplete" class="govuk-label  govuk-label--s">Find address</label>
+              <div id="address-picker-hint" class="govuk-hint">
+                Type part of address or postcode to begin
+              </div>
+                <div id="my-autocomplete-wrapper">
+                    <select id="address-picker" class="govuk-select">
+                      <option value="" selected disabled hidden></option>
+                      {% for address in data['addresses'] %}
+                        <option value="{{ address.id }}">{{ address.line_1 }}, {% if data['address.line_2'] %}{{ address.line_2 }}, {% endif %}{{ address.town }}, {{ address.postcode }}, {{ address.country }}</option>
+                      {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5 full-address">
+              <label class="govuk-label govuk-label--s" for="contactAddress1">
+                Address line 1
+              </label>
+              <input class="govuk-input" id="contactAddress1" name="contactAddress1" type="text" value="{{ data['contactAddress1'] }}">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5 full-address">
+              <label class="govuk-label govuk-label--s" for="contactAddress2">
+                Address line 2
+              </label>
+              <input class="govuk-input" id="contactAddress2" name="contactAddress2" type="text" value="{{ data['contactAddress2'] }}">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5 full-address">
+              <label class="govuk-label govuk-label--s" for="contactTowncity">
+                Town or city
+              </label>
+              <input class="govuk-input" id="contactTowncity" name="contactTowncity" type="text" value="{{ data['contactTowncity'] }}">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5 full-address">
+              <label class="govuk-label govuk-label--s" for="contactPostcode">
+                Postcode
+              </label>
+              <input class="govuk-input govuk-input--width-10" id="contactPostcode" name="contactPostcode" type="text" value="{{ data['contactPostcode'] }}">
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5 full-address">
+              <label class="govuk-label govuk-label--s" for="contactPostcode">
+                Country
+              </label>
+              <select class="govuk-select" id="country" name="country">
+                <option value="" selected disabled hidden></option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Ireland">Ireland</option>
+                <option disabled="">──────────</option>
+                {% for country in data['countries'] %}
+                <option value="{{ data['country'] }}">{{ country }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <a href="#" id="lookup-address" class="govuk-body govuk-link">Lookup address</a>
+            <a href="#" id="enter-manually" class="govuk-body govuk-link">Enter address manually</a>
+
+
+            <div class="govuk-form-group govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+              <label class="govuk-label govuk-label--s" for="contactTel">
+                Telephone number
+              </label>
+              <div id="contactTel-hint" class="govuk-hint">
+                Include area code or international code, if overseas.
+              </div>
+              <input class="govuk-input govuk-!-margin-bottom-5" id="contactTel1" name="contactTel1" type="text" value="{{ data['contactTel1'] }}">
+              <label class="govuk-label govuk-label--s" for="contactTel1">
+                Other telephone number
+              </label>
+              <input class="govuk-input" id="contactTel2" name="contactTel2" type="text" value="{{ data['contactTel2'] }}">
+
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-5">
+              <label class="govuk-label govuk-label--s" for="contactRelationship">
+                Relationship to prisoner
+              </label>
+              <input class="govuk-input" id="contactRelationship" name="contactRelationship" type="text" value="{{ data['contactRelationship'] }}">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="contact-dob-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    Date of birth
+                </legend>
+                <div class="govuk-date-input" id="contact-dob">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="contact-dob">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-dob-day" name="contact-dob-day" type="text" inputmode="numeric" value="{{ data['contact-dob-day'] }}" >
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="contact-dob-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-dob-month" name="contact-dob-month" type="text" inputmode="numeric" value="{{ data['contact-dob-month'] }}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="contact-dob-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="contactDOByear" name="contactDOByear" type="text" inputmode="numeric" value="{{ data['contactDOByear'] }}">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="moj-button-action">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+            </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- end main content  -->
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<script>
+  accessibleAutocomplete.enhanceSelectElement({
+    selectElement: document.querySelector('#address-picker')
+  })
+</script>
+
+{% endblock %}
