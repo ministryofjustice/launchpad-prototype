@@ -23,6 +23,9 @@ let apps                     = require('./dps/app_types.json')
 let wings                    = require('./dps/wings.json')
 let bhApps                   = require('./dps/business_hub_apps.json')
 let pinApps                  = require('./dps/pin_apps.json')
+let addresses                = require('./dps/addresses.json')
+let staff                    = require('./dps/staff.json')
+let countries                = require('./dps/countries.json')
 
 
 module.exports = {
@@ -31,5 +34,8 @@ module.exports = {
   apps,
   wings,
   bhApps,
-  pinApps
+  pinApps,
+  addresses,
+  staff,
+  countries
 }

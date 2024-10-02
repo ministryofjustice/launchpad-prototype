@@ -28,5 +28,11 @@
     "appid": "bh_05",
     "type": "Swap visiting orders (VOs) for PIN credit",
     "amount": 34
+  },
+  {
+    "dept": "Business Hub",
+    "appid": "bh_06",
+    "type": "Print out my PIN contacts list",
+    "amount": 23
   }
 ]

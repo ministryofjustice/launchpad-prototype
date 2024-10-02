@@ -1,0 +1,127 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="New PIN phone contact" %}
+{% set version="latest" %}
+{% set bodyClasses = 'dps staff-v1' %}
+{% set homeurl="/managing-app-requests/staff/latest/" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+
+      <nav aria-label="breadcrumb">
+  			<div class="govuk-breadcrumbs">
+  				<ol class="govuk-breadcrumbs__list">
+  					<li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}">Digital Prisons Services</a>
+  					</li>
+  					<li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}applications/">Applications</a>
+  					</li>
+            <li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}applications/business-hub/">Business Hub</a>
+  					</li>
+  				</ol>
+  			</div>
+  		</nav>
+
+      <span class="govuk-caption-xl">Business Hub applications</span>
+      <h1 class="govuk-heading-xl">
+        {% if data['appType'] == "bh_02" %}
+          Add emergency PIN phone credit
+        {% elseif data['appType'] == "bh_03" %}
+          Add new PIN phone contact
+        {% elseif data['appType'] == "bh_04" %}
+          Remove PIN phone contact
+        {% elseif data['appType'] == "bh_05" %}
+          Swap visiting orders (VOs) for PIN credit
+        {% else %}
+          Top up PIN phone credit
+        {% endif %}
+      </h1>
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row govuk-width-container govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full govuk-!-padding-right-9 govuk-!-padding-left-0">
+
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./index.html">Application</a>
+          </li>
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./comments.html">
+              Comments
+              {% if data['newComment'] %}
+              <span id="notifications" class="moj-notification-badge">1</span>
+              {% endif %}
+            </a>
+          </li>
+
+          {% if data['actionRespond'] == "approved" or data['actionRespond'] == "declined"  %}
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./action-decision.html">Action and reply</a>
+          </li>
+          {% else %}
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./action.html">Action and reply</a>
+          </li>
+          {% endif %}
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page"  href="./history.html">History</a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <h2 class="govuk-heading-m">History of this application</h2>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+      <div class="app-message govuk-body">
+        <div class="app-messages-metadata">
+          J. Smith | {{ -2 | getDate }} at 09:18
+        </div>
+        <div class="app-messages-content">
+          Logged.
+        </div>
+      </div>
+      <div class="app-message govuk-body">
+        <div class="app-messages-metadata">
+          J. Smith | {{ -1 | getDate }} at 12:04
+        </div>
+        <div class="app-messages-content">
+          Forwarded to OMU.
+        </div>
+      </div>
+      <div class="app-message govuk-body">
+        <div class="app-messages-metadata">
+          S. Henderson | {{ 0 | getDate }} at 16:52
+        </div>
+        <div class="app-messages-content">
+          Marked as approved.
+        </div>
+      </div>
+      </div>
+      </div>
+
+      </div>
+
+    </div>
+
+
+  </div> <!-- end main content  -->
+
+
+
+{% endblock %}

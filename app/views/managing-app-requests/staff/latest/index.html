@@ -1,0 +1,181 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="Home" %}
+{% set version="latest" %}
+{% set bodyClasses = 'dps dps-home' %}
+{% set homeurl="/managing-app-requests/staff/latest/" %}
+
+{% block content %}
+
+<div class="dps-intro__container__wrapper">
+  <div class="govuk-width-container ">
+    <div class="dps-intro__container">
+      <img src="/public/images/dps-logo.svg" alt="DPS logo" />
+      <div class="dps-intro__text">
+        <h1 class="govuk-heading-l">Welcome to Digital Prison Services</h1>
+        <p class="govuk-heading-s">The modern replacement for NOMIS.</p>
+        <p class="govuk-body"><a href="">Learn more about DPS</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="homepage-search">
+  <div class="govuk-width-container">
+    <form method="post" action="/search" novalidate="" autocomplete="off">
+      <fieldset class="govuk-fieldset">
+        <legend>
+          <h2 class="govuk-heading-m">Search for a prisoner</h2>
+        </legend>
+        <input type="hidden" name="_csrf" value="RBWNpDDz-e0b_Xv16igmYxc4Kuq5CRuih0bU">
+        <div class="govuk-form-group">
+          <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-qa="local-global-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="search-type-local" name="searchType" type="radio" value="local" checked="">
+              <label class="govuk-label govuk-radios__label" for="search-type-local">
+                In Risley (HMP)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="search-type-global" name="searchType" type="radio" value="global">
+              <label class="govuk-label govuk-radios__label" for="search-type-global">
+                In any establishment (global)
+              </label>
+            </div>
+          </div>
+        <div class="govuk-form-group govuk-form-group--inline govuk-!-margin-bottom-3">
+          <div class="govuk-form-group govuk-form-group__item name-prisoner-number">
+            <label class="govuk-label" for="name">
+              Name or prison number
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text">
+          </div>
+          <div class="govuk-form-group govuk-form-group__item">
+            <label class="govuk-label" for="location">
+              Residential location
+            </label>
+            <select class="govuk-select" id="location" name="location">
+              <option value="RSI" selected="">All</option>
+              <option value="RSI-A">A</option>
+              <option value="RSI-B">B</option>
+              <option value="RSI-C">C</option>
+              <option value="RSI-D">D</option>
+              <option value="RSI-E">E</option>
+              <option value="RSI-F">F</option>
+              <option value="RSI-G">G</option>
+              <option value="RSI-R">R</option>
+              <option value="RSI-S">S</option>
+            </select>
+          </div>
+          <div class="govuk-form-group__button">
+            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="homepage-search-button">
+              Search
+            </button>
+          </div>
+        </div>
+        <div class="govuk-form-group">
+          <a data-qa="search-view-all-link" href="https://digital-dev.prison.service.justice.gov.uk/prisoner-search?keywords=&amp;location=RSI" class="govuk-link govuk-link--no-visited-state">All prisoners in
+            Risley (HMP)</a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+
+<div class="dps-homepage-content">
+  <div class="govuk-width-container">
+    <ul class="govuk-grid-row card-group" id="sortable">
+      <li class="govuk-grid-column-one-third card-group__item" id="tile_001">
+        <div class="card card--clickable card_dps" data-test="manage-prisoner-whereabouts">
+          <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link govuk-link--no-visited-state" href="#">
+              Activities
+            </a>
+          </h2>
+          <p class="govuk-body card__description">
+            Manage activities and attendance.
+          </p>
+        </div>
+      </li>
+      <li class="govuk-grid-column-one-third card-group__item" id="tile_002">
+        <div class="card card--clickable card_dps" data-test="manage-prisoner-whereabouts">
+          <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link govuk-link--no-visited-state" href="#">
+              Adjudications
+            </a>
+          </h2>
+          <p class="govuk-body card__description">
+            Create a report, view current reports and manage adjudications. Testing with one more row of text.
+          </p>
+        </div>
+      </li>
+      <li class="govuk-grid-column-one-third card-group__item" id="tile_003">
+        <div class="card card--clickable card_dps" data-test="establishment-roll">
+          <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link govuk-link--no-visited-state" href="./applications/">Applications</a>
+          </h2>
+          <a class="govuk-link card__link govuk-link--no-visited-state" href="./applications/">
+            <p class="govuk-body card__description">Log, action and reply to prisoner applications.</p>
+          </a>
+        </div>
+      </li>
+      <li class="govuk-grid-column-one-third card-group__item" id="tile_004">
+        <div class="card card--clickable card_dps" data-test="manage-prisoner-whereabouts">
+          <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link govuk-link--no-visited-state" href="#">
+              Cell moves
+            </a>
+          </h2>
+          <p class="govuk-body card__description">
+            Change someone’s cell and view recent moves.
+          </p>
+        </div>
+      </li>
+
+      <li class="govuk-grid-column-one-third card-group__item" id="tile_005">
+        <div class="card card--clickable card_dps" data-test="manage-appointments">
+          <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Check My Diary</a>
+          </h2>
+          <p class="govuk-body card__description">View your staff rota.</p>
+        </div>
+      </li>
+      <li class="govuk-grid-column-one-third card-group__item" id="tile_006">
+        <div class="card card--clickable card_dps" data-test="change-someones-cell">
+          <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Establishment roll</a>
+          </h2>
+          <p class="govuk-body card__description">View the roll by residential unit and view arrivals and departures.</p>
+        </div>
+      </li>
+      <li class="govuk-grid-column-one-third card-group__item" id="tile_007">
+        <div class="card card--clickable card_dps" data-test="check-my-diary">
+          <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Incentives</a>
+          </h2>
+          <p class="govuk-body card__description">View incentives by residential location</p>
+        </div>
+      </li>
+      <li class="govuk-grid-column-one-third card-group__item" id="tile_008">
+        <div class="card card--clickable card_dps" data-test="use-of-force">
+          <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link govuk-link--no-visited-state" href="#">POM Cases</a>
+          </h2>
+          <p class="govuk-body card__description">Keep track of your allocations. If you allocate cases, you also can do that here.</p>
+        </div>
+      </li>
+      <li class="govuk-grid-column-one-third card-group__item" id="tile_009">
+        <div class="card card--clickable card_dps" data-test="manage-adjudications">
+          <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Use of force incidents </a>
+          </h2>
+          <p class="govuk-body card__description">View ongoing and completed use of force reports. </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+{% endblock %}

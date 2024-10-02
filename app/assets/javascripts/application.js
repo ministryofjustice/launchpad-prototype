@@ -63,7 +63,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
   $( "#applicationsSuccess" ).delay(5000).fadeOut('slow');
 
 
-  // Add people to the notify list
+// Add people to the notify list
   var notifyCount = 0;
 
   $('a#addName').click(function() {
@@ -79,48 +79,37 @@ window.GOVUKPrototypeKit.documentReady(() => {
     e.preventDefault();
   });
 
+// POSTCODE
+
+// Hide the full address fields and lookup button
+  $('.full-address').hide();
+  $('#lookup-address').hide();
+  var enterAddress = "lookup";
+
+  // Enter the address mannually
+  $('a#enter-manually').click(function(e){
+    var enterAddress = "manual";
+    $(this).hide();
+    $('.address-lookup').hide();
+    $('.full-address').show();
+    $('#lookup-address').show();
+    e.preventDefault();
+  });
+
+  // Uuse the address Lookup
+  $('a#lookup-address').click(function(e){
+    var enterAddress = "lookup";
+    $('.full-address').hide();
+    $('#lookup-address').hide();
+    $('.address-lookup').show();
+    $('#enter-manually').show();
+    e.preventDefault();
+  });
 
   $('.sensitive-card').click(function(){
     $(this).children('.sensitive').toggle();
   });
 
-  const countries = [
-    'Aditya Sharma (Finance)',
-    'Aisha Patel (Healthcare)',
-    'Aamir Ahmed (Business Hub)',
-    'Alice Taylor (Reception)',
-    'Arjun Singh (Security)',
-    'Ben Williams (OMU)',
-    'Charlotte Brown (Activities)',
-    'Chloe Evans (Education)',
-    'Daniel Johnson (Governers)',
-    'Darnell Campbell (Safer Custody)',
-    'David Wright (Security)',
-    'Emma Roberts (Reception)',
-    'Ethan Clarke (Business Hub)',
-    'George Davies (OMU)',
-    'Hannah Wilson (Chaplaincy)',
-    'Harry Wilson (Education)',
-    'Idris Hassan (Finance)',
-    'James Smith (Safer Custody)',
-    'Jessica Taylor (Governers)',
-    'Kwame Mensah (Activities)',
-    'Liam Evans (Healthcare)',
-    'Muhammad Khan (Chaplaincy)',
-    'Oliver Johnson (Finance)',
-    'Raj Patel (Security)',
-    'Rajesh Sharma (OMU)',
-    'Samuel Roberts (Business Hub)',
-    'Sarah Wright (Reception)',
-    'Thomas Brown (Education)',
-    'William Davies (Activities)',
-    'Zara Ali (Safer Custody)',
-  ]
-
-  accessibleAutocomplete({
-    element: document.querySelector('#my-autocomplete-container'),
-    id: 'my-autocomplete', // To match it to the existing <label>.
-    source: countries
-  })
+  $('span#age').append(contactDOByear);
 
 });
