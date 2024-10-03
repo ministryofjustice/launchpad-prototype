@@ -27,7 +27,7 @@ module.exports = function (router, content) {
     }
     if (appType == "bh_06") {
       // Send user to ineligible page
-      res.redirect('/managing-app-requests/staff/latest/applications/log/print-pin-contacts')
+      res.redirect('/managing-app-requests/staff/latest/applications/log/supply-pin-contacts')
     }
   })
 

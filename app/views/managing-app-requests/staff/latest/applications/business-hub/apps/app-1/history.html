@@ -109,7 +109,11 @@
           S. Henderson | {{ 0 | getDate }} at 16:52
         </div>
         <div class="app-messages-content">
-          Marked as approved.
+          {% if data['actionRespond'] == "approved" %}
+            Marked as approved.
+          {% else %}
+          Marked as declined.
+          {% endif %}
         </div>
       </div>
       </div>
