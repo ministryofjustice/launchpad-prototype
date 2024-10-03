@@ -39,7 +39,7 @@
         {% elseif data['appType'] == "bh_05" %}
           Swap visiting orders (VOs) for PIN credit
         {% elseif data['appType'] == "bh_06" %}
-            Print PIN contacts
+            Supply list of PIN phone contacts
         {% else %}
           Top up PIN phone credit
         {% endif %}
@@ -129,7 +129,7 @@
                 {% elseif data['appType'] == "bh_05" %}
                   Swap visiting orders (VOs) for PIN credit
                 {% elseif data['appType'] == "bh_06" %}
-                    Print PIN contacts
+                    Supply list of PIN phone contacts
                 {% else %}
                   Top up PIN phone credit
                 {% endif %}
@@ -329,11 +329,45 @@
                  Date of birth
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['contact-dob-day'] }} / {{ data['contact-dob-month'] }} / {{ data['contactDOByear'] }} <span id="age">(36 years old)</span>
+                {{ data['contact-dob-day'] }} / {{ data['contact-dob-month'] }} / {{ data['contactDOByear'] }} <span id="age"> ({{ 2024 - data['contactDOByear'] | int }} years old)</span>
               </dd>
             </div>
 
           </dl>
+
+          {% elseif data['appType'] == "bh_04" %}
+          <div class="govuk-summary-list--header">
+            <h2 class="govuk-heading-m">Contact details</h2>
+            <a href="/managing-app-requests/staff/latest/applications/log/remove-pin-contact.html" class="govuk-body">Change <span class="govuk-visually-hidden"> Visiting orders</span></a>
+          </div>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Full name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['contactName'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 Telephone numbers
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p>{{ data['contactTel'] }}</p>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 Relation to prisoner
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['contactRelationship'] }}
+              </dd>
+            </div>
+
+          </dl>
+
 
           {% elseif data['appType'] == "bh_05" %}
           <div class="govuk-summary-list--header">
@@ -355,7 +389,7 @@
 
           {% else %}
           <div class="govuk-summary-list--header">
-            <h2 class="govuk-heading-m">PIN phone credit</h2>
+            <h2 class="govuk-heading-m">Top up credit</h2>
             <a href="/managing-app-requests/staff/latest/applications/log/topup-pin-credit.html" class="govuk-body">Change <span class="govuk-visually-hidden"> PIN phone credit</span></a>
           </div>
 

@@ -32,7 +32,7 @@
   {
     "dept": "Business Hub",
     "appid": "bh_06",
-    "type": "Print out my PIN contacts list",
+    "type": "Supply list of PIN phone contacts",
     "amount": 23
   }
 ]
