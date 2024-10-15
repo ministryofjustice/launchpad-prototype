@@ -136,9 +136,15 @@
               </div>
             </dl>
             <div class="moj-button-action">
-              <a href="#" class="govuk-button">
+              {% if data['actionRespond'] === 'approved' %}
+              <a href="/public/pdfs/approved.pdf" target="_blank" class="govuk-button">
                 Print reply
               </a>
+              {% elseif data['actionRespond'] === 'declined' %}
+              <a href="/public/pdfs/declined.pdf" target="_blank" class="govuk-button">
+                Print reply
+              </a>
+              {% endif %}
             </div>
           </div>
 
