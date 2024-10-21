@@ -1,0 +1,189 @@
+{% extends "layouts/dps.html" %}
+
+{% set pageName="New PIN phone contact" %}
+{% set version="latest" %}
+{% set bodyClasses = 'dps staff-v1' %}
+{% set homeurl="/managing-app-requests/staff/latest/" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+
+      <nav aria-label="breadcrumb">
+  			<div class="govuk-breadcrumbs">
+  				<ol class="govuk-breadcrumbs__list">
+  					<li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}">Digital Prisons Services</a>
+  					</li>
+  					<li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}applications/">Applications</a>
+  					</li>
+            <li class="govuk-breadcrumbs__list-item">
+  						<a class="govuk-breadcrumbs__link" href="{{homeurl}}applications/omu/">OMU</a>
+  					</li>
+  				</ol>
+  			</div>
+  		</nav>
+
+      <span class="govuk-caption-xl">OMU applications</span>
+      <h1 class="govuk-heading-xl">
+        {% if data['appType'] == "bh_02" %}
+          Add emergency PIN phone credit
+        {% elseif data['appType'] == "bh_03" %}
+          Add new PIN phone contact
+        {% elseif data['appType'] == "bh_04" %}
+          Remove PIN phone contact
+        {% elseif data['appType'] == "bh_05" %}
+          Swap visiting orders (VOs) for PIN credit
+        {% else %}
+          Top up PIN phone credit
+        {% endif %}
+      </h1>
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row govuk-width-container govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-full govuk-!-padding-right-9 govuk-!-padding-left-0">
+
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./index.html">Application</a>
+          </li>
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page"  href="./comments.html">
+              Comments
+              {% if data['newComment'] %}
+              <span id="notifications" class="moj-notification-badge">1</span>
+              {% endif %}
+            </a>
+          </li>
+
+          {% if data['actionRespond'] == "approved" or data['actionRespond'] == "declined"  %}
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./action-decision.html">Action and reply</a>
+          </li>
+          {% else %}
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./action.html">Action and reply</a>
+          </li>
+          {% endif %}
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="./history.html">History</a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <h2 class="govuk-heading-m">Comments about this application</h2>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          {% if data['newComment'] %}
+
+          <div class="app-message govuk-body">
+            <div class="app-messages-metadata">
+              J. Smith | {{ 0 | getDate }} at 16:52
+            </div>
+            <div class="app-messages-content">
+              {{ data['newComment'] }}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if data['forwardReasons'] %}
+
+          <div class="app-message govuk-body">
+            <div class="app-messages-metadata">
+              J. Smith | {{ 0 | getDate }} at 16:52
+            </div>
+            <div class="app-messages-content">
+              <p></p>
+              {{ data['forwardReasons'] }}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if (newComment|length) and (forwardReasons|length) %}
+          <div class="app-message govuk-body">
+            <div class="app-messages-content">
+              <p>None</p>
+            </div>
+          </div>
+          {% endif %}
+
+
+
+      <div data-module="moj-add-another">
+
+      <form class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="more-detail">
+            Add a comment
+          </label>
+          <textarea class="govuk-textarea" id="newComment" name="newComment" rows="5"></textarea>
+        </div>
+
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend moj-add-another__title govuk-fieldset__legend--s"">Notify staff about this comment (optional)</legend>
+
+          <dl id="notify-list" class="govuk-summary-list">
+          </dl>
+
+          <div class="govuk-form-group">
+            <label for="my-autocomplete" class="govuk-label">Name</label>
+            <div class="notify-group">
+              <div id="my-autocomplete-wrapper">
+                  <select id="my-autocomplete">
+                    <option value="" selected disabled hidden></option>
+                    {% for individual in data['staff'] %}
+                      <option value="{{ individual.name }} ({{ individual.dept }})">{{ individual.name }} ({{ individual.dept }})</option>
+                    {% endfor %}
+                  </select>
+              </div>
+              <a id="addName" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Add
+              </a>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="moj-button-action">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save comment
+          </button>
+        </div>
+
+      </form>
+      </div>
+      </div>
+      </div>
+
+      </div>
+
+    </div>
+
+
+  </div> <!-- end main content  -->
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  accessibleAutocomplete.enhanceSelectElement({
+    selectElement: document.querySelector('#my-autocomplete')
+  })
+</script>
+
+{% endblock %}

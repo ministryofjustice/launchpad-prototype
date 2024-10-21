@@ -2,7 +2,7 @@
   {
     "date_received": "0",
     "figma_date": "2024-09-08T23:00:00.000Z",
-    "app_type": "Top up PIN phone credit",
+    "app_type": "Add new PIN phone contact",
     "prisoner_name": "Smith, James",
     "prisoner_number": "25250240",
     "app_id": "1",
@@ -38,7 +38,7 @@
   {
     "date_received": "-1",
     "figma_date": "2024-09-07T23:00:00.000Z",
-    "app_type": "Top up PIN phone credit",
+    "app_type": "Add new PIN phone contact",
     "prisoner_name": "Brown, Daniel",
     "prisoner_number": "65330305",
     "app_id": "5",
@@ -74,7 +74,7 @@
   {
     "date_received": "-1",
     "figma_date": "2024-09-07T23:00:00.000Z",
-    "app_type": "Top up PIN phone credit",
+    "app_type": "Add new PIN phone contact",
     "prisoner_name": "Williams, William",
     "prisoner_number": "18101830",
     "app_id": "9",
@@ -101,7 +101,7 @@
   {
     "date_received": "-2",
     "figma_date": "2024-09-06T23:00:00.000Z",
-    "app_type": "Top up PIN phone credit",
+    "app_type": "Add new PIN phone contact",
     "prisoner_name": "Sharma, Aditya",
     "prisoner_number": "65174189",
     "app_id": "12",
@@ -119,7 +119,7 @@
   {
     "date_received": "-2",
     "figma_date": "2024-09-06T23:00:00.000Z",
-    "app_type": "Top up PIN phone credit",
+    "app_type": "Add new PIN phone contact",
     "prisoner_name": "Campbell, Darnell",
     "prisoner_number": "69489495",
     "app_id": "14",
@@ -137,7 +137,7 @@
   {
     "date_received": "-2",
     "figma_date": "2024-09-06T23:00:00.000Z",
-    "app_type": "Top up PIN phone credit",
+    "app_type": "Add new PIN phone contact",
     "prisoner_name": "Evans, Liam",
     "prisoner_number": "65155027",
     "app_id": "16",
@@ -146,7 +146,7 @@
   {
     "date_received": "-2",
     "figma_date": "2024-09-06T23:00:00.000Z",
-    "app_type": "Top up PIN phone credit",
+    "app_type": "Add new PIN phone contact",
     "prisoner_name": "Singh, Arjun",
     "prisoner_number": "71614554",
     "app_id": "17",

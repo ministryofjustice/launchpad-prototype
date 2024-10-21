@@ -1,0 +1,137 @@
+<div class="moj-filter">
+
+  <div class="moj-filter__header">
+    <div class="moj-filter__header-title">
+      <h2 class="govuk-heading-s">Filter</h2>
+    </div>
+
+    <div class="moj-filter__header-action">
+
+    </div>
+  </div>
+
+  <div class="moj-filter__content">
+    <div class="moj-filter__selected">
+      <div class="moj-filter__selected-heading">
+        <div class="moj-filter__heading-title">
+          <h2 class="govuk-heading-s">Selected filters</h2>
+        </div>
+
+        <div class="moj-filter__heading-action">
+          <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="moj-filter__options">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Status
+          </legend>
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type">
+                  Pending
+                </label>
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type">
+                  Closed
+                </label>
+              </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Application type
+          </legend>
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+            {% for app in data['apps'] %}
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type">
+                  {{ app.type }} ({{ app.amount }})
+                </label>
+              </div>
+            {% endfor %}
+
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Wing
+          </legend>
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+            {% for wing in data['wings'] %}
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type">
+                  {{ wing.name }} ({{ wing.amount }})
+                </label>
+              </div>
+            {% endfor %}
+
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Date range
+        </legend>
+
+      {%- from "moj/components/date-picker/macro.njk" import mojDatePicker -%}
+
+      {{ mojDatePicker({
+        id: "date",
+        name: "date",
+        label: {
+            text: "Submitted after"
+        },
+        classes: "govuk-!-margin-bottom-5",
+        hint: {
+          text: "For example, 17/9/2024."
+        }
+      }) }}
+
+      {{ mojDatePicker({
+        id: "date",
+        name: "date",
+        label: {
+            text: "Submitted before"
+        },
+        hint: {
+          text: "For example, 17/9/2024."
+        }
+      }) }}
+      </fieldset>
+    </div>
+
+			<button type="submit" class="govuk-button govuk-!-margin-top-5" data-module="govuk-button" data-test-id="submit-button">
+				Apply filters
+			</button>
+
+
+    </div>
+
+  </div>
+
+</div>
