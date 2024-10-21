@@ -34,4 +34,9 @@ module.exports = function (router, content) {
   router.post('/managing-app-requests/staff/latest/applications/business-hub/apps/app-1/action', function (req, res) {
       res.redirect('/managing-app-requests/staff/latest/applications/business-hub/apps/app-1/action-decision')
   })
+
+  router.post('/managing-app-requests/staff/latest/applications/omu/apps/app-1/action', function (req, res) {
+      res.redirect('/managing-app-requests/staff/latest/applications/omu/apps/app-1/action-decision')
+  })
+
 }
