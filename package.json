@@ -2,15 +2,21 @@
   "scripts": {
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
-    "start": "govuk-prototype-kit start"
+    "start": "govuk-prototype-kit start",
+    "security_audit": "npx audit-ci --config audit-ci.json",
+    "setup": "npm ci && hmpps-npm-script-run-allowlist"
+  },
+  "engines": {
+    "node": "^24",
+    "npm": "^11"
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "1.2.2",
     "@ministryofjustice/frontend": "^2.2.0",
-    "@x-govuk/govuk-prototype-filters": "^1.2.1",
+    "@x-govuk/govuk-prototype-filters": "^2.1.0",
     "accessible-autocomplete": "^3.0.0",
     "govuk-frontend": "^5.4.1",
-    "govuk-prototype-kit": "13.13.3",
+    "govuk-prototype-kit": "13.20.0",
     "jquery": "3.7.1",
     "moment": "^2.29.4"
   }

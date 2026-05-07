@@ -1,0 +1,192 @@
+diff --git a/.allowed-scripts.mjs b/.allowed-scripts.mjs
+new file mode 100644
+index 0000000..d7157e7
+--- /dev/null
++++ b/.allowed-scripts.mjs
+@@ -0,0 +1,7 @@
++import { configureAllowedScripts } from '@ministryofjustice/hmpps-npm-script-allowlist'
++
++export default configureAllowedScripts({
++  allowlist: {
++
++   },
++})
+\ No newline at end of file
+diff --git a/.github/dependabot.yml b/.github/dependabot.yml
+new file mode 100644
+index 0000000..6a5a191
+--- /dev/null
++++ b/.github/dependabot.yml
+@@ -0,0 +1,15 @@
++# To get started with Dependabot version updates, you'll need to specify which
++# package ecosystems to update and where the package manifests are located.
++# Please see the documentation for all configuration options:
++# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
++
++version: 2
++updates:
++  - package-ecosystem: "github-actions"
++    directory: "/"
++    schedule:
++      interval: "daily"
++  - package-ecosystem: "npm"
++    directory: "/"
++    schedule:
++      interval: "daily"
+\ No newline at end of file
+diff --git a/.github/workflows/security_codeql_actions_scan.yml b/.github/workflows/security_codeql_actions_scan.yml
+new file mode 100644
+index 0000000..f64e26b
+--- /dev/null
++++ b/.github/workflows/security_codeql_actions_scan.yml
+@@ -0,0 +1,18 @@
++name: Security CodeQL actions scan
++
++on:
++  workflow_dispatch:
++  schedule:
++    - cron: "45 13 * * MON-FRI" # Every weekday at 13:45 UTC
++
++jobs:
++  security-codeql-actions-check:
++    permissions:
++      contents: read
++      actions: read
++      security-events: write
++    name: Project security CodeQL python scan
++    uses: ministryofjustice/hmpps-github-actions/.github/workflows/security_codeql_actions.yml@v2 # WORKFLOW_VERSION
++    with:
++      channel_id: ${{ vars.SECURITY_ALERTS_SLACK_CHANNEL_ID || 'NO_SLACK' }}
++    secrets: inherit
+\ No newline at end of file
+diff --git a/.github/workflows/security_npm_dependency.yml b/.github/workflows/security_npm_dependency.yml
+new file mode 100644
+index 0000000..6d03ec8
+--- /dev/null
++++ b/.github/workflows/security_npm_dependency.yml
+@@ -0,0 +1,18 @@
++name: Security npm dependency check
++
++on:
++  workflow_dispatch:
++  schedule:
++    - cron: "28 8 * * MON-FRI" # Every weekday at 08:28 UTC
++
++jobs:
++  security-npm-dependency-check:
++    name: Project security npm dependency check
++    uses: ministryofjustice/hmpps-github-actions/.github/workflows/security_npm_dependency.yml@v2 # WORKFLOW_VERSION
++    with:
++      channel_id: ${{ vars.SECURITY_ALERTS_SLACK_CHANNEL_ID || 'NO_SLACK' }}
++    secrets: inherit
++    permissions:
++      contents: read
++      actions: read
++      security-events: write
+\ No newline at end of file
+diff --git a/.github/workflows/security_veracode_pipeline_scan.yml b/.github/workflows/security_veracode_pipeline_scan.yml
+new file mode 100644
+index 0000000..5064423
+--- /dev/null
++++ b/.github/workflows/security_veracode_pipeline_scan.yml
+@@ -0,0 +1,18 @@
++name: Security veracode pipeline scan
++
++on:
++  workflow_dispatch:
++  schedule:
++    - cron: "28 8 * * MON-FRI" # Every weekday at 08:28 UTC
++
++jobs:
++  security-veracode-pipeline-scan:
++    name: Project security veracode pipeline scan
++    uses: ministryofjustice/hmpps-github-actions/.github/workflows/security_veracode_pipeline_scan.yml@v2 # WORKFLOW_VERSION
++    with:
++      channel_id: ${{ vars.SECURITY_ALERTS_SLACK_CHANNEL_ID || 'NO_SLACK' }}
++    secrets: inherit
++    permissions:
++      contents: read
++      actions: read
++      security-events: write
+\ No newline at end of file
+diff --git a/.github/workflows/security_veracode_policy_scan.yml b/.github/workflows/security_veracode_policy_scan.yml
+new file mode 100644
+index 0000000..14803a2
+--- /dev/null
++++ b/.github/workflows/security_veracode_policy_scan.yml
+@@ -0,0 +1,18 @@
++name: Security veracode policy scan
++
++on:
++  workflow_dispatch:
++  schedule:
++    - cron: "54 8 * * 1" # Every Monday at 08:54 UTC
++
++jobs:
++  security-veracode-policy-check:
++    name: Project security veracode policy scan
++    uses: ministryofjustice/hmpps-github-actions/.github/workflows/security_veracode_policy_scan.yml@v2 # WORKFLOW_VERSION
++    with:
++      channel_id: ${{ vars.SECURITY_ALERTS_SLACK_CHANNEL_ID || 'NO_SLACK' }}
++    secrets: inherit
++    permissions:
++      contents: read
++      actions: read
++      security-events: write
+\ No newline at end of file
+diff --git a/.npmrc b/.npmrc
+new file mode 100644
+index 0000000..9cfa75a
+--- /dev/null
++++ b/.npmrc
+@@ -0,0 +1,19 @@
++# This provides sensible defaults, this can be customised if necessary and changes will not be overwritten
++
++# Prevent preinstall, install, postinstall scripts from running by default
++ignore-scripts = true
++
++# Use exact versions in package.json when using npm install <pkg>
++save-exact = true
++
++# Fail if trying to use incorrect version of npm
++engine-strict = true
++
++# Show any output of scripts in the console
++foreground-scripts = true
++
++# Wait a minimum of 7 days before allowing a package to be released, this is to allow time for any issues to be discovered and fixed before the package is released
++min-release-age = 7
++
++# Don't allow git dependencies
++allow-git = none
+\ No newline at end of file
+diff --git a/.nvmrc b/.nvmrc
+new file mode 100644
+index 0000000..cabf43b
+--- /dev/null
++++ b/.nvmrc
+@@ -0,0 +1 @@
++24
+\ No newline at end of file
+diff --git a/Dockerfile b/Dockerfile
+index 35f281a..4fdb9b6 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -1,4 +1,4 @@
+-FROM node:18.16-bullseye-slim
++FROM node:24-bullseye-slim
+
+ ENV NODE_ENV=production
+
+diff --git a/audit-ci.json b/audit-ci.json
+new file mode 100644
+index 0000000..ecd4593
+--- /dev/null
++++ b/audit-ci.json
+@@ -0,0 +1,5 @@
++{
++  "low": true,
++  "package-manager": "auto",
++  "registry": "https://registry.npmjs.org"
++}
+\ No newline at end of file
