@@ -16,7 +16,7 @@
     "@x-govuk/govuk-prototype-filters": "^2.1.0",
     "accessible-autocomplete": "^3.0.0",
     "govuk-frontend": "^5.4.1",
-    "govuk-prototype-kit": "13.20.0",
+    "govuk-prototype-kit": "13.20.1",
     "jquery": "3.7.1",
     "moment": "^2.29.4"
   }
